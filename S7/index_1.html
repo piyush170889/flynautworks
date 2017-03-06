@@ -1,458 +1,458 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
 
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-    <title>S7 Client Intake Form</title>
-	 <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style_s7.css" rel="stylesheet">
-    <link href="css/checkbox.css" rel="stylesheet">
-    <link href="css/responsive_s7.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-	<style>
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type="number"] {
-    -moz-appearance: textfield;
-} 	
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-<script>
-			$( document ).ready(function() {
-		$('#addButon').on('click',function() {
-   
-			// add input element
-			var markUp=" <div class='removeDiv'> <input  type='text' name='otherfblink[]' required='' style='width:95%;'><span class='remove' style='float:right;cursor:pointer;display:block;z-index:999;border: 1px solid #333;border-radius: 50px;padding: 5px;border-color: #29B6F6;margin-top:-20px;'><img src='img/remove.png' style='width:25px;'></span> </div> "+
-					   "   <span  class='highlight removeInput'></span> "+
-					   "   <span  class='bar'></span> ";
-			//remove add button
-			
-			$('#otherlinks').append(markUp);
-			
-			
-			
-			});
-			$('body').on('click', '.remove', function () {
-				$(this).parent('.removeDiv').remove();
-			});
-			
-			
-				// checkboxx events	
-				 $('#checkbox1').on('change', function() {
-				// alert("clicked");
-				  if ($(this).is(':checked')) {
-				  var ownername= $("input[name=ownername]").val();
-				  var owneremail= $("input[name=owneremail]").val();
-				  var ownernumber= $("input[name=ownernumber]").val();
-			   
-			   // set manager 
-			   
-			    $("input[name=schoolmanager]").val(ownername);
-			    $("input[name=manageremail]").val(owneremail);
-			    $("input[name=managernumber]").val(ownernumber);
-
-			   } else {
-			  // unchecked section
-				$("input[name=schoolmanager]").val("");
-			    $("input[name=manageremail]").val("");
-			    $("input[name=managernumber]").val("");
-				}
+		<title>S7 Client Intake Form</title>
+		 <!-- Bootstrap Core CSS -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/style_s7.css" rel="stylesheet">
+		<link href="css/checkbox.css" rel="stylesheet">
+		<link href="css/responsive_s7.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+		<style>
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type="number"] {
+		-moz-appearance: textfield;
+	} 	
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+	<script>
+				$( document ).ready(function() {
+			$('#addButon').on('click',function() {
+	   
+				// add input element
+				var markUp=" <div class='removeDiv'> <input  type='text' name='otherfblink[]' required='' style='width:95%;'><span class='remove' style='float:right;cursor:pointer;display:block;z-index:999;border: 1px solid #333;border-radius: 50px;padding: 5px;border-color: #29B6F6;margin-top:-20px;'><img src='img/remove.png' style='width:25px;'></span> </div> "+
+						   "   <span  class='highlight removeInput'></span> "+
+						   "   <span  class='bar'></span> ";
+				//remove add button
+				
+				$('#otherlinks').append(markUp);
+				
+				
+				
+				});
+				$('body').on('click', '.remove', function () {
+					$(this).parent('.removeDiv').remove();
 				});
 				
 				
-				// Radio events	
-				 $('#radio1').on('change', function() {
-				// alert("clicked");
-				  if ("$this.val==1") 
-				  {
-				  
-				  var ownername= $("input[name=ownername]").val();
-				  var owneremail= $("input[name=owneremail]").val();
-				  var ownernumber= $("input[name=ownernumber]").val();
-			   
-			   // set manager 
-			   
-			      $("input[name=techmanager]").val(ownername);
-			      $("input[name=techmanageremail]").val(owneremail);
-			      $("input[name=techmanagernumber]").val(ownernumber);
+					// checkboxx events	
+					 $('#checkbox1').on('change', function() {
+					// alert("clicked");
+					  if ($(this).is(':checked')) {
+					  var ownername= $("input[name=ownername]").val();
+					  var owneremail= $("input[name=owneremail]").val();
+					  var ownernumber= $("input[name=ownernumber]").val();
+				   
+				   // set manager 
+				   
+					$("input[name=schoolmanager]").val(ownername);
+					$("input[name=manageremail]").val(owneremail);
+					$("input[name=managernumber]").val(ownernumber);
 
-			     } else {
-			  // unchecked section
-				  $("input[name=techmanager]").val("");
-			      $("input[name=techmanageremail]").val("");
-			      $("input[name=techmanagernumber]").val("");
-			  }
+				   } else {
+				  // unchecked section
+					$("input[name=schoolmanager]").val("");
+					$("input[name=manageremail]").val("");
+					$("input[name=managernumber]").val("");
+					}
 					});
 					
 					
-					
-				// Radio events	
-				 $('#radio2').on('change', function() {
-				// alert("clicked");
-				  if ("$this.val==2") 
-				  {
-				  
-				  var schoolmanager= $("input[name=schoolmanager]").val();
-				  var manageremail= $("input[name=manageremail]").val();
-				  var managernumber= $("input[name=managernumber]").val();
-			   
-			   // set manager 
-			   
-			      $("input[name=techmanager]").val(schoolmanager);
-			      $("input[name=techmanageremail]").val(manageremail);
-			      $("input[name=techmanagernumber]").val(managernumber);
+					// Radio events	
+					 $('#radio1').on('change', function() {
+					// alert("clicked");
+					  if ("$this.val==1") 
+					  {
+					  
+					  var ownername= $("input[name=ownername]").val();
+					  var owneremail= $("input[name=owneremail]").val();
+					  var ownernumber= $("input[name=ownernumber]").val();
+				   
+				   // set manager 
+				   
+					  $("input[name=techmanager]").val(ownername);
+					  $("input[name=techmanageremail]").val(owneremail);
+					  $("input[name=techmanagernumber]").val(ownernumber);
 
-			     } else {
-			  // unchecked section
-				  $("input[name=techmanager]").val("");
-			      $("input[name=techmanageremail]").val("");
-			      $("input[name=techmanagernumber]").val("");
-			  }
-					});
-					
-			
-			
+					 } else {
+				  // unchecked section
+					  $("input[name=techmanager]").val("");
+					  $("input[name=techmanageremail]").val("");
+					  $("input[name=techmanagernumber]").val("");
+				  }
+						});
+						
+						
+						
+					// Radio events	
+					 $('#radio2').on('change', function() {
+					// alert("clicked");
+					  if ("$this.val==2") 
+					  {
+					  
+					  var schoolmanager= $("input[name=schoolmanager]").val();
+					  var manageremail= $("input[name=manageremail]").val();
+					  var managernumber= $("input[name=managernumber]").val();
+				   
+				   // set manager 
+				   
+					  $("input[name=techmanager]").val(schoolmanager);
+					  $("input[name=techmanageremail]").val(manageremail);
+					  $("input[name=techmanagernumber]").val(managernumber);
+
+					 } else {
+				  // unchecked section
+					  $("input[name=techmanager]").val("");
+					  $("input[name=techmanageremail]").val("");
+					  $("input[name=techmanagernumber]").val("");
+				  }
+						});
+						
+				
 				
 					
+						
+						
 					
+						
+						
 				
-					
-					
-			
-		});
-			</script>
-</head>
-<body style="overflow-x: hidden;">
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
-<img src="img/logo.png" class="img-responsive">
-</div>
-<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
-<img src="img/logo2.png" class="img-responsive" style="width:360px;float:right;">
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<h2 class="heading" style="
-    background: #03A9F4;
-    color: #fff;
-    padding: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-	margin-top:0;
-	
-">S7 Client Intake Form</h2>
-
-</div>
-</div>
-<div class="row padding-50">
-	<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
-	<span style="color:red;font-family: 'Muli', sans-serif;">* Required</span>
-	</div>
-	<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 text-right">
-	<h5 style="margin:0;">( To be completed during the intake call )</h5>
-	</div>
-	</div>
-    <div class=" col-lg-12" id="panel">
-	
-        <form method="get" action="phpemail.php" style="padding:0 15px;">
-			<div class="col-md-12" style="">
-			<label style="font-size:20px;width: 17em;border-style: solid;border-width: 0 0.5em 0.3em 0;border-color: white white #03A9F4 white;">Owner &amp; School Information :</label>
-			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="row" style="padding:0 5px;">
-            <div class="group col-md-6 col-sm-12 col-xs-12">
-                <input type="text" name="ownername" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="left">Owner's Name <span style="color:red;">*</span></label>
-            </div>
-
-            <div class="group col-md-6 col-sm-12 col-xs-12">
-                <input type="email" name="owneremail" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="left">Owner's Contact Email <span style="color:red;">*</span></label>
-            </div>
-
-            <div class="group col-md-6 col-sm-12 col-xs-12">
-                <input type="number" name="ownernumber" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="left">Owner's Phone <span style="color:red;">*</span></label>
-            </div>
-			<div class="group col-md-6 col-sm-12 col-xs-12">
-                <input type="text" name="schoolname" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="left">School Name <span style="color:red;">*</span></label>
-            </div>
-			</div>
-			<div class="group resp-height">
-                <input type="text" name="schoolweblink" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>School Website Link <span style="color:red;">*</span></label>
-            </div>
-			<script>
-			$( document ).ready(function() {
-		$('#addButon2').on('click',function() {
-   
-			// add input element
-			var markUp=" <div class='removeDiv1'> <input  type='text' name='programoffered[]' required='' style='width:95%;'><span class='remove1' style='float:right;cursor:pointer;display:block;z-index:999;border: 1px solid #333;border-radius: 50px;padding: 5px;border-color: #29B6F6;margin-top:-20px;'><img src='img/remove.png' style='width:25px;'></span> </div> "+
-					   "   <span  class='highlight removeInput'></span> "+
-					   "   <span  class='bar'></span> ";
-			//remove add button
-			
-			$('#schoolprograms').append(markUp);
 			});
-			$('body').on('click', '.remove1', function () {
-				$(this).parent('.removeDiv1').remove();
+				</script>
+	</head>
+	<body style="overflow-x: hidden;">
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+	<img src="img/logo.png" class="img-responsive">
+	</div>
+	<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+	<img src="img/logo2.png" class="img-responsive" style="width:360px;float:right;">
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
+	<h2 class="heading" style="
+		background: #03A9F4;
+		color: #fff;
+		padding: 20px;
+		font-weight: bold;
+		margin-bottom: 20px;
+		margin-top:0;
+		
+	">S7 Client Intake Form</h2>
+
+	</div>
+	</div>
+	<div class="row padding-50">
+		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+		<span style="color:red;font-family: 'Muli', sans-serif;">* Required</span>
+		</div>
+		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 text-right">
+		<h5 style="margin:0;">( To be completed during the intake call )</h5>
+		</div>
+		</div>
+		<div class=" col-lg-12" id="panel">
+		
+			<form method="get" action="phpemail.php" style="padding:0 15px;">
+				<div class="col-md-12" style="">
+				<label style="font-size:20px;width: 17em;border-style: solid;border-width: 0 0.5em 0.3em 0;border-color: white white #03A9F4 white;">Owner &amp; School Information :</label>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="row" style="padding:0 5px;">
+				<div class="group col-md-6 col-sm-12 col-xs-12">
+					<input type="text" name="ownername" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="left">Owner's Name <span style="color:red;">*</span></label>
+				</div>
+
+				<div class="group col-md-6 col-sm-12 col-xs-12">
+					<input type="email" name="owneremail" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="left">Owner's Contact Email <span style="color:red;">*</span></label>
+				</div>
+
+				<div class="group col-md-6 col-sm-12 col-xs-12">
+					<input type="number" name="ownernumber" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="left">Owner's Phone <span style="color:red;">*</span></label>
+				</div>
+				<div class="group col-md-6 col-sm-12 col-xs-12">
+					<input type="text" name="schoolname" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="left">School Name <span style="color:red;">*</span></label>
+				</div>
+				</div>
+				<div class="group resp-height">
+					<input type="text" name="schoolweblink" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>School Website Link <span style="color:red;">*</span></label>
+				</div>
+				<script>
+				$( document ).ready(function() {
+			$('#addButon2').on('click',function() {
+	   
+				// add input element
+				var markUp=" <div class='removeDiv1'> <input  type='text' name='programoffered[]' required='' style='width:95%;'><span class='remove1' style='float:right;cursor:pointer;display:block;z-index:999;border: 1px solid #333;border-radius: 50px;padding: 5px;border-color: #29B6F6;margin-top:-20px;'><img src='img/remove.png' style='width:25px;'></span> </div> "+
+						   "   <span  class='highlight removeInput'></span> "+
+						   "   <span  class='bar'></span> ";
+				//remove add button
+				
+				$('#schoolprograms').append(markUp);
+				});
+				$('body').on('click', '.remove1', function () {
+					$(this).parent('.removeDiv1').remove();
+				});
 			});
-		});
-			</script>
-			<div class="group" id="schoolprograms">
-				<span class="plus-line" id="addButon2">
+				</script>
+				<div class="group" id="schoolprograms">
+					<span class="plus-line" id="addButon2">
+					<img src="img/add.png" style="width:25px;">
+					</span>
+					<input type="text" name="programoffered[]" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-label">Enter All Your Programs Offered at the School (example: kids martial arts, adult fitness, kickboxing, afterschool...) <span style="color:red;">*</span></label>
+				</div>
+				<div class="group resp-height">
+					<input type="text" name="facebooklink" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Main Facebook Page Link <span style="color:red;">*</span></label>
+				</div>
+				
+				<div class="group" id="otherlinks" style="margin-bottom:40px;">
+				<span style="float:right;cursor:pointer;display:block;z-index:999;border: 1px solid #333;border-radius: 50px;padding: 5px;border-color: #29B6F6;" id="addButon">
 				<img src="img/add.png" style="width:25px;">
 				</span>
-                <input type="text" name="programoffered[]" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-label">Enter All Your Programs Offered at the School (example: kids martial arts, adult fitness, kickboxing, afterschool...) <span style="color:red;">*</span></label>
-            </div>
-			<div class="group resp-height">
-                <input type="text" name="facebooklink" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Main Facebook Page Link <span style="color:red;">*</span></label>
-            </div>
-			
-			<div class="group" id="otherlinks" style="margin-bottom:40px;">
-			<span style="float:right;cursor:pointer;display:block;z-index:999;border: 1px solid #333;border-radius: 50px;padding: 5px;border-color: #29B6F6;" id="addButon">
-			<img src="img/add.png" style="width:25px;">
-			</span>
-                <input type="text" name="otherfblink[]" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-label" style="width:90%; top:10px;">Other Facebook Page Links (after-school, summer camp, etc..) One per line <span style="color:red;">*</span></label>
-			
-				
-            </div>
-			<div class="row" style="padding:0 15px;">
-            <div class="col-md-9 resp-title" style="">
-			<label style="font-size:20px;width: 17em;border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;width:100%">School Manager Information:</label>
-			</div>
-			
-			<div class="col-md-3 col-xs-12 col-sm-12">
-			<div class="pure-checkbox sameasowner">
-                            <input id="checkbox1" name="checkbox" type="checkbox" >
-                            <label for="checkbox1">Same as Owner</label>
-                        </div>
-			</div>
-			</div>
-			
-			<div class="row">
-			<div class="group col-md-4 resp-height2">
-                <input type="text" name="schoolmanager" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text left">School Manager<span style="color:red;">*</span></label>
-            </div>
-			<div class="group col-md-4 resp-height2">
-                <input type="email" name="manageremail" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text left">Manager's contact email <span style="color:red;">*</span></label>
-            </div>
-			<div class="group col-md-4">
-                <input type="number" name="managernumber" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text left">Manager Phone<span style="color:red;">*</span></label>
-            </div>
-			</div>
-			<div class="row" style="padding:0 15px;">
-			<div class="col-md-8 resp-height3" style="">
-			<label style="font-size:20px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Technical Information Manager to Grant Access to Websites, Emails, Ads Manager and Social Media Pages :</label>
-			</div>
-			
-			<div class="col-md-2 col-xs-12 col-sm-12">
-			<div class="pure-radiobutton ownerradio">
-            <input id="radio1" name="radio" type="radio" class="radio" value="1">
-            <label for="radio1">Same as Owner</label>
-            </div>
-			</div>
-			
-			<div class="col-md-2 col-xs-12 col-sm-12">
-			<div class="pure-radiobutton ownerradio ownerradio2">
-            <input id="radio2" name="radio" type="radio" class="radio" value="2">
-            <label for="radio2">Same as Manager</label>
-            </div>
-			</div>
-			
-			</div>
-			<br/>
-			<br/>
-			<div class="row">
-			<div class="group col-md-4 resp-height">
-                <input type="text" name="techmanager" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text left">Technical Information Manager<span style="color:red;">*</span></label>
-            </div>
-			<div class="group col-md-4 resp-height">
-                <input type="email" name="techmanageremail" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text4 left">Technical Information Manager Email<span style="color:red;">*</span></label>
-            </div>
-			<div class="group col-md-4">
-                <input type="number" name="techmanagernumber" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text4 left">Technical Information Manager Phone<span style="color:red;">*</span></label>
-            </div>
-			</div>
-			<div class="row" style="padding:0 15px;">
-			<div class="col-md-12 resp-height" style="">
-			<label style="font-size:24px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Lead Notification (who will be alerted when leads opt-in) :</label>
-			</div>
-			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="row">
-			<div class="group ">
-                <!--<input type="email" name="leademail" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text5">Leads: Email Notifications (owner, manager, assistant, etc...)</label>-->
-				<div class="col-md-3 resp-mag-bottom">
-					<h4 style="margin-top:0;">Email Notifications:</h4>
-					</div>
-					<div class="col-md-2 pure-checkbox">
-					
-                            <input id="leadowner" name="checkbox" type="checkbox" >
-                            <label class="top-20" for="leadowner">Owner</label>
-                    </div>
-					<div class="col-md-2 pure-checkbox">
-							<input id="leadmanager" name="checkbox" type="checkbox" >
-                            <label class="top-20" for="leadmanager">Manager</label>
-                    </div>
-					<div class="col-md-2 pure-checkbox">
-							<input id="leadother" name="checkbox" type="checkbox" >
-                            <label class="top-20" for="leadother">Other</label>
-                    </div>
-					<script>
-					
-					$("#leadother").change(function(){
-					
-							
-					if ($(this).is(':checked')) 
-					{
-					
-						$("#leadothertext").show();
-					}
-					else
-					{
-					
-						   $("#leadothertext").hide(); 
-					}
-						
-					});
-				</script>
-					<div id="leadothertext" style="display:none;" class="col-md-12">
-					<input  type="text" name="s7otheremailid" >
+					<input type="text" name="otherfblink[]" required="">
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					
-					</div>
-            </div>
-			</div>
-			<br/>
-			<br/>
-			<div class="row">
-			<div class="group">
-                <!--<input type="number" name="leadnumber" required="">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="resp-text-70">Leads: Phone Call Notifications emails (owner, manager, assistant, etc...)</label>-->
+					<label class="resp-label" style="width:90%; top:10px;">Other Facebook Page Links (after-school, summer camp, etc..) One per line <span style="color:red;">*</span></label>
 				
-				<div class="col-md-3 resp-mag-bottom">
-					<h4 style="margin-top:0;">Phone Call Notifications emails<span style="color:red;">*</span>:</h4>
-					</div>
-					<div class="col-md-2 pure-checkbox">
 					
-                            <input id="phonecallowner" name="checkbox" type="checkbox" >
-                            <label class="top-20" for="phonecallowner">Owner</label>
-                    </div>
-					<div class="col-md-2 pure-checkbox">
-							<input id="phonecallmanager" name="checkbox" type="checkbox" >
-                            <label class="top-20" for="phonecallmanager">Manager</label>
-                    </div>
-					<div class="col-md-2 pure-checkbox">
-							<input id="phonecallother" name="checkbox" type="checkbox" >
-                            <label class="top-20" for="phonecallother">Other</label>
-                    </div>
-					<script>
-					
-					$("#phonecallother").change(function(){
-					
-							
-					if ($(this).is(':checked')) 
-					{
-					
-						$("#phonecallothertext").show();
-					}
-					else
-					{
-					
-						   $("#phonecallothertext").hide(); 
-					}
-						
-					});
-				</script>
-					<div id="phonecallothertext" style="display:none;" class="col-md-12">
-					<input  type="text" name="otheremailid" >
+				</div>
+				<div class="row" style="padding:0 15px;">
+				<div class="col-md-9 resp-title" style="">
+				<label style="font-size:20px;width: 17em;border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;width:100%">School Manager Information:</label>
+				</div>
+				
+				<div class="col-md-3 col-xs-12 col-sm-12">
+				<div class="pure-checkbox sameasowner">
+								<input id="checkbox1" name="checkbox" type="checkbox" >
+								<label for="checkbox1">Same as Owner</label>
+							</div>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="group col-md-4 resp-height2">
+					<input type="text" name="schoolmanager" required="">
 					<span class="highlight"></span>
 					<span class="bar"></span>
+					<label class="resp-text left">School Manager<span style="color:red;">*</span></label>
+				</div>
+				<div class="group col-md-4 resp-height2">
+					<input type="email" name="manageremail" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text left">Manager's contact email <span style="color:red;">*</span></label>
+				</div>
+				<div class="group col-md-4">
+					<input type="number" name="managernumber" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text left">Manager Phone<span style="color:red;">*</span></label>
+				</div>
+				</div>
+				<div class="row" style="padding:0 15px;">
+				<div class="col-md-8 resp-height3" style="">
+				<label style="font-size:20px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Technical Information Manager to Grant Access to Websites, Emails, Ads Manager and Social Media Pages :</label>
+				</div>
+				
+				<div class="col-md-2 col-xs-12 col-sm-12">
+				<div class="pure-radiobutton ownerradio">
+				<input id="radio1" name="radio" type="radio" class="radio" value="1">
+				<label for="radio1">Same as Owner</label>
+				</div>
+				</div>
+				
+				<div class="col-md-2 col-xs-12 col-sm-12">
+				<div class="pure-radiobutton ownerradio ownerradio2">
+				<input id="radio2" name="radio" type="radio" class="radio" value="2">
+				<label for="radio2">Same as Manager</label>
+				</div>
+				</div>
+				
+				</div>
+				<br/>
+				<br/>
+				<div class="row">
+				<div class="group col-md-4 resp-height">
+					<input type="text" name="techmanager" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text left">Technical Information Manager<span style="color:red;">*</span></label>
+				</div>
+				<div class="group col-md-4 resp-height">
+					<input type="email" name="techmanageremail" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text4 left">Technical Information Manager Email<span style="color:red;">*</span></label>
+				</div>
+				<div class="group col-md-4">
+					<input type="number" name="techmanagernumber" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text4 left">Technical Information Manager Phone<span style="color:red;">*</span></label>
+				</div>
+				</div>
+				<div class="row" style="padding:0 15px;">
+				<div class="col-md-12 resp-height" style="">
+				<label style="font-size:24px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Lead Notification (who will be alerted when leads opt-in) :</label>
+				</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="row">
+				<div class="group ">
+					<!--<input type="email" name="leademail" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text5">Leads: Email Notifications (owner, manager, assistant, etc...)</label>-->
+					<div class="col-md-3 resp-mag-bottom">
+						<h4 style="margin-top:0;">Email Notifications:</h4>
+						</div>
+						<div class="col-md-2 pure-checkbox">
+						
+								<input id="leadowner" name="checkbox" type="checkbox" >
+								<label class="top-20" for="leadowner">Owner</label>
+						</div>
+						<div class="col-md-2 pure-checkbox">
+								<input id="leadmanager" name="checkbox" type="checkbox" >
+								<label class="top-20" for="leadmanager">Manager</label>
+						</div>
+						<div class="col-md-2 pure-checkbox">
+								<input id="leadother" name="checkbox" type="checkbox" >
+								<label class="top-20" for="leadother">Other</label>
+						</div>
+						<script>
+						
+						$("#leadother").change(function(){
+						
+								
+						if ($(this).is(':checked')) 
+						{
+						
+							$("#leadothertext").show();
+						}
+						else
+						{
+						
+							   $("#leadothertext").hide(); 
+						}
+							
+						});
+					</script>
+						<div id="leadothertext" style="display:none;" class="col-md-12">
+						<input  type="text" name="s7otheremailid" >
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						
+						</div>
+				</div>
+				</div>
+				<br/>
+				<br/>
+				<div class="row">
+				<div class="group">
+					<!--<input type="number" name="leadnumber" required="">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="resp-text-70">Leads: Phone Call Notifications emails (owner, manager, assistant, etc...)</label>-->
 					
-					</div>
-            </div>
-			</div>
-			<div class="row">
-			<div class="col-md-12" style="">
-			<label style="font-size:14px;padding:0 10px;">Note: Once Submitted, You will see the link to book your onboarding call with Randy Reid</label>
-			</div>
-			</div>
-			<br>
-			<br>
-			
-            <div class="group mag-top">
-              <input type="submit" value="Submit" class="btn btn-primary btn-lg submit-btn">
-            </div>
-			<br>
-			<br>
-			<br>
-			<br>
-        </form>
+					<div class="col-md-3 resp-mag-bottom">
+						<h4 style="margin-top:0;">Phone Call Notifications emails<span style="color:red;">*</span>:</h4>
+						</div>
+						<div class="col-md-2 pure-checkbox">
+						
+								<input id="phonecallowner" name="checkbox" type="checkbox" >
+								<label class="top-20" for="phonecallowner">Owner</label>
+						</div>
+						<div class="col-md-2 pure-checkbox">
+								<input id="phonecallmanager" name="checkbox" type="checkbox" >
+								<label class="top-20" for="phonecallmanager">Manager</label>
+						</div>
+						<div class="col-md-2 pure-checkbox">
+								<input id="phonecallother" name="checkbox" type="checkbox" >
+								<label class="top-20" for="phonecallother">Other</label>
+						</div>
+						<script>
+						
+						$("#phonecallother").change(function(){
+						
+								
+						if ($(this).is(':checked')) 
+						{
+						
+							$("#phonecallothertext").show();
+						}
+						else
+						{
+						
+							   $("#phonecallothertext").hide(); 
+						}
+							
+						});
+					</script>
+						<div id="phonecallothertext" style="display:none;" class="col-md-12">
+						<input  type="text" name="otheremailid" >
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						
+						</div>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-12" style="">
+				<label style="font-size:14px;padding:0 10px;">Note: Once Submitted, You will see the link to book your onboarding call with Randy Reid</label>
+				</div>
+				</div>
+				<br>
+				<br>
+				
+				<div class="group mag-top">
+				  <input type="submit" value="Submit" class="btn btn-primary btn-lg submit-btn">
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+			</form>
 
-    </div>
-</div>
+		</div>
+	</div>
 
-</body>
-</html>
+	</body>
+	</html>
