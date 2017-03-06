@@ -143,7 +143,7 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		function getConnnObject() {
 			$servername = "localhost";
 			$username = "root";
-			$password = "root";
+			$password = "";
 			$dbname = "dojo_db";
 
 			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
