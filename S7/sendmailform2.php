@@ -19,6 +19,7 @@
 		if(!$mail->Send()) {
 			echo $mail->ErrorInfo;
 			echo "<script>alert('Error Occured sending the enquiry. Please try again')</script>";			
+			echo "<script>document.location='placeorder.html'</script>";
 		} else {
 			echo "<script>document.location='thankyou_campaign.php?orderid=$orderId'</script>";			
 		}
