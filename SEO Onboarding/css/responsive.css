@@ -1,0 +1,81 @@
+@media only screen and (max-width: 500px) {
+.padding-80
+{
+padding:20px;
+}
+.mag-top-bottom{
+	margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+.mag-to-label
+{
+	margin-top:-15px;
+}
+.mag-to-label-more
+{
+	margin-top:-57px;
+}
+
+.mag-top-bottom-less
+{
+	margin-bottom:65px;
+}
+.just-mag-bottom
+{
+margin-bottom:180px;	
+}
+.mag-bottom-100
+{
+	margin-bottom:100px;
+}
+.mag-to-label-little-less
+{
+margin-top:-40px;	
+}
+
+.label-mag-top-lots
+{
+	margin-top:-145px;
+}
+.mag-top-45
+{
+	margin-top:-45px;
+}
+.mag-bottom-90
+{
+	margin-bottom:90px;
+}
+.mag-top-25
+{
+	margin-top:-25px;
+}
+.mag-bottom-50
+{
+	margin-bottom:50px;
+}
+
+.mag-top-20{
+	margin-top:-20px;
+}
+
+.mag-top-40
+{
+	margin-top:-40px;
+}
+.mag-bottom-80
+{
+	margin-bottom:80px;
+}
+.mag-bottom-70
+{
+	margin-bottom:70px;
+}
+.mag-top-18{
+	margin-top:-18px;
+}
+.mag-top-60
+{
+	margin-top:-60px;
+}
+}
