@@ -24,12 +24,6 @@
 	$callrecordings=$_GET['callrecordings'];
 	$othercampaignnotes=$_GET['othercampaignnotes'];
 	
-	
-	
-	
-	
-	
-	
 	$body = "<html>
 	<head>
 	<style>
