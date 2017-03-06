@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+	font-family: 'Muli', sans-serif;
+}
+
+
+
+/* form starting stylings ------------------------------- */
+.group {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+input {
+    font-size: 18px;
+    padding: 5px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+    background: transparent;
+}
+
+    input:focus {
+        outline: none;
+        /* color: #03A9F4; */
+    }
+
+/* LABEL ======================================= */
+label {
+    color: #333;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    /*pointer-events: none;*/
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+	font-family: 'Muli', sans-serif;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #03A9F4;
+    font-weight: bold;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+    .bar:before, .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #333;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+
+
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #333;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #333;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #333;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+
+#panel {
+    
+/* background: -webkit-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%); */
+    
+/* background: url(img/bg.jpg); */ /* For browsers that do not support gradients */
+    
+top: 0px;
+    
+padding:0 50px;
+    
+/* border: 1px solid #333; */
+}
+
+
+/* custom CSS */
+.heading
+{
+	margin-bottom:0;
+	margin-top:20px;
+}
+
+.left{
+	
+	margin-left:15px;
+}
+.padding-15
+{
+	padding:0 15px;
+}
+.padding-50
+{
+	padding: 0 70px;
+}
+.plus-line
+{
+	float:right;
+	cursor:pointer;
+	display:block;
+	z-index:999;
+	border: 1px solid #333;
+	border-radius: 50px;
+	padding: 5px;
+	border-color: #29B6F6;
+}
+.sameasowner
+{
+	margin-top: 47px;
+	float: right;
+}
+
+.ownerradio
+{
+	margin-top: 47px;
+	float: right;
+}
+
+.submit-btn
+{
+	float:right;
+	border-radius:0;
+	background: #03A9F4;
+	padding:10px 25px;
+	border-color: #03A9F4;
+	width: 20%;
+}
+.main-bg
+{
+height:100%;
+width:100%;
+background:url(img/thankyoubg.jpg);
+background-position:top center;
+background-size:cover;
+background-repeat:no-repeat;
+display:block;
+}	
