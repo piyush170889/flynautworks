@@ -15,6 +15,7 @@
 	$campaigntemplate=$_GET['campaigntemplate'];
 	$campaigntemplateother=$_GET['campaigntemplateother'];
 	$buyingtemplate=$_GET['buyingtemplate'];
+	$buyingTemplateOther=$_GET['arepeoplebuyingcampaign'];
 	$campaignstartdate=$_GET['campaignstartdate'];
 	$campaignenddate=$_GET['campaignenddate'];
 	$paymentprocessor=$_GET['paymentprocessor'];
@@ -24,6 +25,15 @@
 	$callrecordings=$_GET['callrecordings'];
 	$othercampaignnotes=$_GET['othercampaignnotes'];
 	$refererUrl=$_SERVER['HTTP_REFERER'];
+	
+	//Check if other is selected
+	if (strcmp($campaigntemplate,"other")==0) {
+		$campaigntemplate=$campaigntemplateother;
+	}
+	
+	if (strcmp($buyingtemplate,"othercampaign")==0) {
+		$buyingtemplate=$buyingTemplateOther;
+	}
 	
 	//Set alert of purchases
 	$alertofpurchase='';
