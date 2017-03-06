@@ -117,17 +117,7 @@
 					  $("input[name=techmanageremail]").val("");
 					  $("input[name=techmanagernumber]").val("");
 				  }
-						});
-						
-				
-				
-					
-						
-						
-					
-						
-						
-				
+						});	
 			});
 				</script>
 	</head>
@@ -343,18 +333,18 @@
 					<label class="resp-text5">Leads: Email Notifications (owner, manager, assistant, etc...)</label>-->
 					<div class="col-md-3 resp-mag-bottom">
 						<h4 style="margin-top:0;">Email Notifications:</h4>
-						</div>
+					</div>
 						<div class="col-md-2 pure-checkbox">
 						
-								<input id="leadowner" name="checkbox" type="checkbox" >
+								<input id="leadowner" name="leademailowner" type="checkbox" >
 								<label class="top-20" for="leadowner">Owner</label>
 						</div>
 						<div class="col-md-2 pure-checkbox">
-								<input id="leadmanager" name="checkbox" type="checkbox" >
+								<input id="leadmanager" name="leadmailmanager" type="checkbox" >
 								<label class="top-20" for="leadmanager">Manager</label>
 						</div>
 						<div class="col-md-2 pure-checkbox">
-								<input id="leadother" name="checkbox" type="checkbox" >
+								<input id="leadother" name="leadmailother" type="checkbox" >
 								<label class="top-20" for="leadother">Other</label>
 						</div>
 						<script>
@@ -376,10 +366,9 @@
 						});
 					</script>
 						<div id="leadothertext" style="display:none;" class="col-md-12">
-						<input  type="text" name="s7otheremailid" >
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						
+							<input  type="text" name="s7otheremailid" >
+							<span class="highlight"></span>
+							<span class="bar"></span>
 						</div>
 				</div>
 				</div>
@@ -397,15 +386,15 @@
 						</div>
 						<div class="col-md-2 pure-checkbox">
 						
-								<input id="phonecallowner" name="checkbox" type="checkbox" >
+								<input id="phonecallowner" name="leadnumberowner" type="checkbox" >
 								<label class="top-20" for="phonecallowner">Owner</label>
 						</div>
 						<div class="col-md-2 pure-checkbox">
-								<input id="phonecallmanager" name="checkbox" type="checkbox" >
+								<input id="phonecallmanager" name="leadnumbermanager" type="checkbox" >
 								<label class="top-20" for="phonecallmanager">Manager</label>
 						</div>
 						<div class="col-md-2 pure-checkbox">
-								<input id="phonecallother" name="checkbox" type="checkbox" >
+								<input id="phonecallother" name="leadnumberother" type="checkbox" >
 								<label class="top-20" for="phonecallother">Other</label>
 						</div>
 						<script>
@@ -427,10 +416,9 @@
 						});
 					</script>
 						<div id="phonecallothertext" style="display:none;" class="col-md-12">
-						<input  type="text" name="otheremailid" >
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						
+							<input  type="text" name="phonecallothertxt" >
+							<span class="highlight"></span>
+							<span class="bar"></span>
 						</div>
 				</div>
 				</div>

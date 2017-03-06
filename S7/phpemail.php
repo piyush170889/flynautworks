@@ -17,13 +17,52 @@
 	$techmanager=$_GET['techmanager'];
 	$techmanageremail=$_GET['techmanageremail'];
 	$techmanagernumber=$_GET['techmanagernumber'];
-	$leademail=$_GET['leademail'];
-	$leadnumber=$_GET['leadnumber'];	
 	$refererUrl=$_SERVER['HTTP_REFERER'];
 	$programoffered="";
 	$otherfblink="";
 	$sizeOfProgramsOfferedasarray=sizeof($programofferedasarray)-1;
 	$sizeOfotherfblinkasarray=sizeof($otherfblinkasarray)-1;
+	$leademail="";
+	$leadnumber="";
+
+	/*SET Lead Mails*/
+	if (isset($_GET['leademailowner'])) {
+		$leademail = $owneremail;
+	} 
+		
+	if (isset($_GET['leadmailmanager'])) {
+		if (!empty($leademail)) {
+			$leademail=$leademail.",";
+		}
+		$leademail=$leademail.$manageremail;
+	}
+
+	if (isset($_GET['leadmailother']) && !empty($_GET['s7otheremailid'])) {
+		if (!empty($leademail)) {
+			$leademail=$leademail.",";
+		}
+		$leademail=$leademail.$_GET['s7otheremailid'];
+	}
+	
+		
+	//Set Lead Numbers
+	if (isset($_GET['leadnumberowner'])) {
+		$leadnumber = $ownernumber;
+	} 
+		
+	if (isset($_GET['leadnumbermanager'])) {
+		if (!empty($leadnumber)) {
+			$leadnumber=$leadnumber.",";
+		}
+		$leadnumber=$leadnumber.$managernumber;
+	}
+
+	if (isset($_GET['leadnumberother']) && !empty($_GET['phonecallothertxt'])) {
+		if (!empty($leadnumber)) {
+			$leadnumber=$leadnumber.",";
+		}
+		$leadnumber=$leadnumber.$_GET['phonecallothertxt'];
+	}
 	
 	foreach ($programofferedasarray as $p => $n) {
 		if ($p==$sizeOfProgramsOfferedasarray) {
@@ -52,6 +91,6 @@
 	} catch(PDOException $e) {
 		echo "<br/>".$e;
 		echo "<script type='text/javascript'>alert('Record could not be saved at the moment');</script>";
-		//echo "<script type='text/javascript'>window.location='$refererUrl';</script>";
+		echo "<script type='text/javascript'>window.location='$refererUrl';</script>";
 	}
 ?> 
