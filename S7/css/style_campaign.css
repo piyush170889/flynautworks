@@ -322,3 +322,7 @@ input:focus ~ .highlight {
 {
 	padding:0 50px;
 }
+.mag-top-30
+{
+	margin-top:30px;
+}

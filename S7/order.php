@@ -339,21 +339,21 @@
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label class="resp-text5 left">Who will be alerted of Purchases/Leads? Add all emails <span style="color:red;">*</span></label>-->
-					<div class="col-md-6 resp-mag-bottom">
+					<div class="col-md-4 resp-mag-bottom">
 					<h4>Who will be alerted of Purchases/Leads? Add all emails <span style="color:red;">*</span>:</h4>
 					</div>
 					<div class="col-md-2 pure-checkbox">
 					
                             <input id="checkbox1" name="checkbox" type="checkbox" >
-                            <label for="checkbox1">Owner</label>
+                            <label for="checkbox1" class="mag-top-30">Owner</label>
                     </div>
 					<div class="col-md-2 pure-checkbox">
 							<input id="checkbox2" name="checkbox" type="checkbox" >
-                            <label for="checkbox2">Manager</label>
+                            <label for="checkbox2" class="mag-top-30">Manager</label>
                     </div>
 					<div class="col-md-2 pure-checkbox">
 							<input id="othercheckbox3" name="checkbox" value="othercheckbox" type="checkbox" >
-                            <label for="othercheckbox3">Other</label>
+                            <label for="othercheckbox3" class="mag-top-30">Other</label>
                     </div>
 					<script>
 					
@@ -398,7 +398,7 @@
 				</div>
 				
 				<div class="group ">
-				  <input type="submit" value="submit" class="btn btn-primary btn-lg" style="float:right;border-radius:0;padding:10px 25px">
+				  <input type="submit" value="Submit" class="btn btn-primary btn-lg" style="float:right;border-radius:0;padding:10px 25px">
 				</div>
 				<br/>
 				<br/>
