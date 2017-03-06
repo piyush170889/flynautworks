@@ -14,6 +14,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/style_campaign.css" rel="stylesheet">
 		<link href="css/responsive_campaign.css" rel="stylesheet">
+		<link href="css/checkbox.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 		
 		<style>
@@ -66,18 +67,18 @@
 				<br/>
 				<br/>
 				<div class="row" style="padding:0 5px;">
+				<div class="group col-md-6 col-lg-6 col-sm-12 col-xs-12 resp-height2">
+					<input type="number" name="accoutnno" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="left">Account Number <span style="color:red;">*</span></label>
+				</div>
+				
 				<div class="group col-md-6 col-lg-6 col-sm-12 col-xs-12">
 					<input type="text" name="clientname" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label class="left">Client Name <span style="color:red;">*</span></label>
-				</div>
-
-				<div class="group col-md-6 col-lg-6 col-sm-12 col-xs-12 resp-height2">
-					<input type="number" name="accountnumber" required>
-					<span class="highlight"></span>
-					<span class="bar"></span>
-					<label class="left">Account Number <span style="color:red;">*</span></label>
 				</div>
 
 				<div class="group col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -161,7 +162,7 @@
 					<input type="text" name="marketradius" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					<label class="top-50 left">Campaign Market Radius (How far out do you target?)<span style="color:red;">*</span></label>
+					<label class="top-50 left">Campaign Market Radius (How far out do you target? | 1 Mile = 15 Minutes)<span style="color:red;">*</span></label>
 				</div>
 				</div>
 				<div class="row padding-15">
@@ -211,11 +212,12 @@
 					  <input type="radio" name="campaigntemplate" value="other"/>
 					  <div class="control__indicator"></div>
 					</label>
+					<br/>
 					<div id="otherAnswer" style="display:none;" class="group col-md-12">
 					<input  type="text" name="campaigntemplateother" >
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					
+					<label class="left">Please specify</label>
 				</div>
 				<script>
 					$("input[type='radio']").change(function(){
@@ -245,8 +247,31 @@
 					  <input type="radio" name="buyingtemplate"/>
 					  <div class="control__indicator"></div>
 					</label>
-					
+					<label class="control control--radio">Other
+					  <input type="radio" name="buyingtemplate" value="othercampaign"/>
+					  <div class="control__indicator"></div>
+					</label>
+					<br/>
+					<div id="otherAnswercampaign" style="display:none;" class="group col-md-12">
+					<input  type="text" name="campaigntemplateother" >
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class=" left">Please specify</label>
 				</div>
+				<script>
+					$("input[type='radio']").change(function(){
+							
+					if($(this).val()=="othercampaign")
+					{
+						$("#otherAnswercampaign").show();
+					}
+					else
+					{
+						   $("#otherAnswercampaign").hide(); 
+					}
+						
+					});
+				</script>
 				</div>
 				<br/>
 				<div class="row" style="padding:0 15px">
@@ -308,13 +333,55 @@
 				<br/>
 				<br/>
 				<div class="row">
-				<div class="group col-md-6 resp-height">
-					<input type="text" name="alertofpurchase" required>
+				<div class="group col-md-12 resp-height" style="padding:0;">
+					<!--<input type="text" name="alertofpurchase" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					<label class="resp-text5 left">Who will be alerted of Purchases/Leads? Add all emails <span style="color:red;">*</span></label>
+					<label class="resp-text5 left">Who will be alerted of Purchases/Leads? Add all emails <span style="color:red;">*</span></label>-->
+					<div class="col-md-6">
+					<h4>Who will be alerted of Purchases/Leads? Add all emails <span style="color:red;">*</span>:</h4>
+					</div>
+					<div class="col-md-2 pure-checkbox">
+					
+                            <input id="checkbox1" name="checkbox" type="checkbox" >
+                            <label for="checkbox1">Owner</label>
+                    </div>
+					<div class="col-md-2 pure-checkbox">
+							<input id="checkbox2" name="checkbox" type="checkbox" >
+                            <label for="checkbox2">Manager</label>
+                    </div>
+					<div class="col-md-2 pure-checkbox">
+							<input id="othercheckbox3" name="checkbox" value="othercheckbox" type="checkbox" >
+                            <label for="othercheckbox3">Other</label>
+                    </div>
+					<script>
+					
+					$("#othercheckbox3").change(function(){
+					
+							
+					if ($(this).is(':checked')) 
+					{
+					
+						$("#otheremailidcheckbox").show();
+					}
+					else
+					{
+					
+						   $("#otheremailidcheckbox").hide(); 
+					}
+						
+					});
+				</script>
+					<div id="otheremailidcheckbox" style="display:none;" class="col-md-12">
+					<input  type="text" name="otheremailid" >
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					
+					</div>
 				</div>
-				<div class="group col-md-6">
+				</div>
+				<div class="row">
+				<div class="group col-md-12">
 					<input type="email" name="callrecordings" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
@@ -326,9 +393,8 @@
 					<span class="bar"></span>
 					<label  class="left">Other Campaign Notes</label>
 				</div>
-				</div>
 				<br/>
-				
+				</div>
 				
 				<div class="group ">
 				  <input type="submit" value="submit" class="btn btn-primary btn-lg" style="float:right;border-radius:0;padding:10px 25px">
@@ -337,6 +403,7 @@
 				<br/>
 				<br/>
 				<br/>
+				
 			</form>
 			</div>
 

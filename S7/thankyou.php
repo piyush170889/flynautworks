@@ -15,6 +15,10 @@
     <link href="css/checkbox.css" rel="stylesheet">
     <link href="css/responsive_s7.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+	<!-- Calendly inline widget begin -->
+
+<script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
+<!-- Calendly inline widget end -->
 	
 </head>
 <body style="height:100%;width:100%;background:url(img/thankyoubg.jpg);background-position:top center;background-size:cover;background-repeat:no-repeat;">
@@ -38,5 +42,6 @@
 </div>
 </div>
 </div>
+<div class="calendly-inline-widget" data-url=”https://calendly.com/xxxx" style="min-width:320px;height:580px;"></div>
 </body>
 </html>
