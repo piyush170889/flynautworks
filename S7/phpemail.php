@@ -1,4 +1,5 @@
 <?php
+	require 'config.php';
 	require 'sendmail.php';
 	require 'helperclass.php';
 	$subject = "S7 Client Intake Form";

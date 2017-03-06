@@ -1,4 +1,5 @@
 <?php
+
 function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num) {
 			$body = "<html>
@@ -105,24 +106,21 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		
 		function insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber) {
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "dojo_db";
+			$acct_id_prefix="DN2017";
+			
 			$acct_id=0;
 			
 			$sqlInsert = "INSERT INTO user_dtls(OWNER_NAME,OWNER_MAIL,OWNER_NUM,SCHOOL_NM,SCHOOL_WEB_LINK,PROGRAM_OFFRD,
 			FB_LINK,OTHER_FB_LINK,SCHOOL_MNGR,MANAGER_EMAIL,MANAGER_NUM,TECH_MANAGER,
 			TECH_MANAGER_EMAIL,TECH_MANAGER_NUM,LEAD_EMAIL,LEAD_NUM) VALUES ('$ownername', '$owneremail', '$ownernumber', '$schoolname', '$schoolweblink', '$programoffered','$facebooklink','$otherfblink','$schoolmanager','$manageremail','$managernumber','$techmanager','$techmanageremail','$techmanagernumber','$leademail','$leadnumber')";
-			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-			// set the PDO error mode to exception
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$conn = getConnnObject();
 			// use exec() because no results are returned
 			$conn->exec($sqlInsert);
 			$last_id = $conn->lastInsertId();
 			$acct_id_from_last_id=$last_id;			
 			
-			$acct_id=calculateSevenDigitAccountIdFromLastId($acct_id_from_last_id);
+			//$acct_id=calculateSevenDigitAccountIdFromLastId($acct_id_from_last_id);
+			$acct_id=$acct_id_prefix.$acct_id_from_last_id;								//Create Accoutn Id
 			
 			$sqlUpdate="update user_dtls set IS_EMAIL_SENT='Y',ACCT_NUM='".$acct_id."' where USER_DTLS_ID=".$last_id;
 			$conn->exec($sqlUpdate);
@@ -131,7 +129,7 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		}
 		
 		function calculateSevenDigitAccountIdFromLastId($acct_id_from_last_id) {
-			$acct_id="DN";
+			$acct_id="DN2017";
 			$acctIdLengthPreferred=7;
 			$acctIdfromLastIdLength=strlen($acct_id_from_last_id);
 			$prefixZerosToAppend=$acctIdLengthPreferred-$acctIdfromLastIdLength;
@@ -140,5 +138,17 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 			}
 			$acct_id=$acct_id.$acct_id_from_last_id;
 			return $acct_id;
+		}
+		
+		function getConnnObject() {
+			$servername = "localhost";
+			$username = "root";
+			$password = "root";
+			$dbname = "dojo_db";
+
+			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			// set the PDO error mode to exception
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			return $conn;
 		}
 ?>

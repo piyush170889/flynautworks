@@ -1,0 +1,84 @@
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+
+		<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="description" content="">
+			<meta name="author" content="">
+
+			<title>Campaign Order Form - Done With Client</title>
+			 <!-- Bootstrap Core CSS -->
+			 <link rel="stylesheet" href="css/jqueryui.css">
+			<link href="css/bootstrap.css" rel="stylesheet">
+			<link href="css/style_campaign.css" rel="stylesheet">
+			<link href="css/responsive_campaign.css" rel="stylesheet">
+			<link href="css/checkbox.css" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+			
+			<style>
+		input[type="number"]::-webkit-outer-spin-button,
+		input[type="number"]::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		input[type="number"] {
+			-moz-appearance: textfield;
+		} 	
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+	  $( function() {
+		$( "#datepicker" ).datepicker();
+		$( "#datepicker1" ).datepicker();
+	  } );
+	  </script>
+		</head>
+		<body style="background:url(img/bg.jpg);overflow-x:hidden;">
+		<div class="container-fluid">
+		<div class="row">
+		<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+		<img src="img/logo.png" class="img-responsive">
+		</div>
+		<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+		<img src="img/logo2.png" class="img-responsive" style="width:360px;float:right;">
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-12">
+		<h2 class="heading">Campaign Order Form - Done With Client</h2>
+		<hr/>
+		</div>
+		</div>
+		<div class="row padding-50">
+		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+		<span style="color:red;font-family: 'Muli', sans-serif;">* Required</span>
+		</div>
+		<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 text-right">
+		<h5 style="margin:0;">( To be completed during the intake call )</h5>
+		</div>
+		</div>
+			<div class=" col-lg-12" id="panel">
+				<div class="container">
+				<form method="post" action="/S7/acctsearch.php" class="col-md-12" style="padding:0 15px;">					
+					<br/>
+					<br/>
+					<div class="row" style="padding:0 5px;">
+						<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 resp-height2">
+							<input type="text" name="accoutnno" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label class="left">Account Number <span style="color:red;">*</span></label>
+						</div>
+						<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">						
+							<button name="searchacct" class="btn btn-primary col-md-6">SEARCH</button>
+						</div>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+		</body>
+		</html>
