@@ -26,15 +26,6 @@
 	$othercampaignnotes=$_GET['othercampaignnotes'];
 	$refererUrl=$_SERVER['HTTP_REFERER'];
 	
-	//Check if other is selected
-	if (strcmp($campaigntemplate,"other")==0) {
-		$campaigntemplate=$campaigntemplateother;
-	}
-	
-	if (strcmp($buyingtemplate,"othercampaign")==0) {
-		$buyingtemplate=$buyingTemplateOther;
-	}
-	
 	//Set alert of purchases
 	$alertofpurchase='';
 	if (isset($_GET['purchasealertowner'])) {
