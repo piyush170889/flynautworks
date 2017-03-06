@@ -344,15 +344,15 @@
 					</div>
 					<div class="col-md-2 pure-checkbox">
 					
-                            <input id="checkbox1" name="checkbox" type="checkbox" >
+                            <input id="checkbox1" name="purchasealertowner" type="checkbox" >
                             <label for="checkbox1" class="mag-top-30">Owner</label>
                     </div>
 					<div class="col-md-2 pure-checkbox">
-							<input id="checkbox2" name="checkbox" type="checkbox" >
+							<input id="checkbox2" name="purchasealertmanager" type="checkbox" >
                             <label for="checkbox2" class="mag-top-30">Manager</label>
                     </div>
 					<div class="col-md-2 pure-checkbox">
-							<input id="othercheckbox3" name="checkbox" value="othercheckbox" type="checkbox" >
+							<input id="othercheckbox3" name="purchasealertother" value="othercheckbox" type="checkbox" >
                             <label for="othercheckbox3" class="mag-top-30">Other</label>
                     </div>
 					<script>

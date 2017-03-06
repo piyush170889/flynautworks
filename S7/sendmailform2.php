@@ -1,5 +1,5 @@
 <?php
-   	function sendEmail($subject, $body) {
+   	function sendEmail($subject, $body, $orderId) {
 		require 'phpmailer/PHPMailerAutoload.php';
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
@@ -19,6 +19,8 @@
 		if(!$mail->Send()) {
 			echo $mail->ErrorInfo;
 			echo "<script>alert('Error Occured sending the enquiry. Please try again')</script>";			
+		} else {
+			echo "<script>document.location='thankyou_campaign.php?orderid=$orderId'</script>";			
 		}
 	}	
 ?>

@@ -143,12 +143,53 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		function getConnnObject() {
 			$servername = "localhost";
 			$username = "root";
-			$password = "";
+			$password = "root";
 			$dbname = "dojo_db";
 
 			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			// set the PDO error mode to exception
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			return $conn;
+		}
+		
+		function generateOrderId($clientname) {
+			$orderIdPrefix=strtoupper(substr($clientname,0,2));
+			$digits_needed=8;
+
+			$orderIdSuffix=''; // set up a blank string
+
+			$count=0;
+
+			while ($count < $digits_needed ) {
+				$random_digit = mt_rand(0, 9);
+				
+				$orderIdSuffix .= $random_digit;
+				$count++;
+			}
+			
+			$finalOrderId=$orderIdPrefix.$orderIdSuffix;
+			
+			return $finalOrderId;
+		} 
+		
+		function getSingleRow($sql) {
+			$conn=getConnnObject();
+			$stmt = $conn->prepare($sql);
+			$stmt->execute();
+			
+			if ($stmt->rowCount() == 1) {
+				$row=$stmt->fetch(PDO::FETCH_ASSOC);
+				return $row;
+			} else {
+					echo "<script type='text/javascript'>alert('No relevant records found for the Account no. submitted');</script>";
+					echo "<script type='text/javascript'>window.location='$refererUrl';</script>";
+			}
+		}
+		
+		function insertOrderDetails($accountnumber, $orderId, $alertofpurchase) {
+			$orderSqlInsert="insert into order_dtls(ACCT_NUM,ALERT_OF_PURCHASE_EMAILS,ORDER_ID) values('$accountnumber','$alertofpurchase','$orderId')";
+			$conn = getConnnObject();
+			// use exec() because no results are returned
+			$conn->exec($orderSqlInsert);
 		}
 ?>

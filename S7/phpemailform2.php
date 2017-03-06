@@ -1,8 +1,9 @@
 <?php
+	require 'helperclass.php';
 	require 'sendmailform2.php';
 	$subject = "Campaign Order Form";
 	$clientname = $_GET['clientname'];
-	$accountnumber=$_GET['accountnumber'];
+	$accountnumber=$_GET['accoutnno'];
 	$contactpreference=$_GET['contactpreference'];
 	$schoolprogramname=$_GET['schoolprogramname'];
 	$namecampaign=$_GET['namecampaign'];
@@ -20,9 +21,39 @@
 	$campaignbudget=$_GET['campaignbudget'];
 	$domainname=$_GET['domainname'];
 	$trackingphonenumber=$_GET['trackingphonenumber'];
-	$alertofpurchase=$_GET['alertofpurchase'];
 	$callrecordings=$_GET['callrecordings'];
 	$othercampaignnotes=$_GET['othercampaignnotes'];
+	$refererUrl=$_SERVER['HTTP_REFERER'];
+	
+	//Set alert of purchases
+	$alertofpurchase='';
+	if (isset($_GET['purchasealertowner'])) {
+		$ownerEmailSql="select OWNER_MAIL from user_dtls where ACCT_NUM='$accountnumber'";
+		$owneremailrow=getSingleRow($ownerEmailSql);
+		$owneremail=$owneremailrow['OWNER_MAIL'];
+		$alertofpurchase = $owneremail;
+	} 
+		
+	if (isset($_GET['purchasealertmanager'])) {
+		$manageremailSql="select MANAGER_EMAIL from user_dtls where ACCT_NUM='$accountnumber'";
+		$manageremailRow=getSingleRow($manageremailSql);
+		$manageremail=$manageremailRow['MANAGER_EMAIL'];
+		if (!empty($alertofpurchase)) {
+			$alertofpurchase=$alertofpurchase.",";
+		}
+		$alertofpurchase=$alertofpurchase.$manageremail;
+	}
+
+	if (isset($_GET['purchasealertother']) && !empty($_GET['otheremailid'])) {
+		if (!empty($alertofpurchase)) {
+			$alertofpurchase=$alertofpurchase.",";
+		}
+		$alertofpurchase=$alertofpurchase.$_GET['otheremailid'];
+	}
+	
+	$orderid=generateOrderId($clientname);	//Generate Order Id
+	
+	insertOrderDetails($accountnumber, $orderid, $alertofpurchase);	//Insert Alert Of Purchase Emails and order id for Account no
 	
 	$body = "<html>
 	<head>
@@ -35,6 +66,11 @@
 	</head>
 	<body>
 	<table border=1 class=\"tablecss\">
+	<tr>
+	<td class=\"label\">Order Name</td>
+	<td class=\"labelvalue\">".$orderid."</td>
+	</tr>
+	
 	<tr>
 	<td class=\"label\">Client Name</td>
 	<td class=\"labelvalue\">".$clientname."</td>
@@ -128,6 +164,7 @@
 	</table>
 	</body>
 	</html>";
-
-	sendEmail($subject, $body);
+	
+	sendEmail($subject, $body, $orderid);
+	
 ?> 

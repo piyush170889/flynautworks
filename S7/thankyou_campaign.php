@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>S7 Client Intake Form</title>
+		<title>Campaign Order Form</title>
 		 <!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/style_s7.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 	<h1 class="text-center" style="color:#333;font-weight:bold;">Welcome Aboard</h1>
 	<h3 class="text-center" style="color:#333;">Thanks for filling out the on-boarding information.</h3>
 	<center><a href="#" style="font-size:20px;color:#333">You can set-up a kick off all with Randy via this link</a></center>
-	<h4 class="text-center" style="color:#333;">Your Order Id : <?php echo $_GET['acctid']; ?></h4>
+	<h4 class="text-center" style="color:#333;">Your Order Id : <?php echo $_GET['orderid']; ?></h4>
 	</div>
 	</div>
 	</div>
@@ -34,7 +34,7 @@
 	<h1 class="text-center" style="color:#333;font-weight:bold;">Welcome Aboard</h1>
 	<h3 class="text-center" style="color:#333;">Thanks for filling out the on-boarding information.</h3>
 	<center><a href="#" style="font-size:20px;color:#333">You can set-up a kick off all with Randy via this link</a></center>
-	<h4 class="text-center" style="color:#333;">Your Order ID :<?php echo $_GET['acctid']; ?> </h4>
+	<h4 class="text-center" style="color:#333;">Your Order ID :<?php echo $_GET['orderid']; ?> </h4>
 	</div>
 	</div>
 	</div>
