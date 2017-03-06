@@ -15,6 +15,7 @@
 		$mail->Body = $body;
 		$mail->IsHTML(true);
 		$mail->AddAddress('dojoworks.flynaut@gmail.com');
+		$mail->AddAddress('dojodigest@gmail.com');
 		
 		if(!$mail->Send()) {
 			echo $mail->ErrorInfo;

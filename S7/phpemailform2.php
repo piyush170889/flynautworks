@@ -127,6 +127,10 @@
 	<td class=\"labelvalue\">".$buyingtemplate."</td>
 	</tr>
 	<tr>
+	<td class=\"label\">Are People Buying This Campaign Online? (Other Text Field)</td>
+	<td class=\"labelvalue\">".$buyingTemplateOther."</td>
+	</tr>
+	<tr>
 	<td class=\"label\">Campaign Start Date</td>
 	<td class=\"labelvalue\">".$campaignstartdate."</td>
 	</tr>

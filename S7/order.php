@@ -210,26 +210,27 @@
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio" >Other
-					  <input type="radio" name="campaigntemplate" value="other"/>
+					  <input type="radio" name="campaigntemplate" value="Other"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<br/>
 					<div id="otherAnswer" style="display:none;" class="group col-md-12">
-					<input  type="text" name="campaigntemplateother" >
+					<input  type="text" name="campaigntemplateother" id="campaigntemplateother1" >
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label class="left">Please specify</label>
 				</div>
 				<script>
-					$("input[type='radio']").change(function(){
+					$("input[name='campaigntemplate']").change(function(){
 							
-					if($(this).val()=="other")
+					if($(this).val()=="Other")
 					{
 						$("#otherAnswer").show();
 					}
 					else
 					{
-						   $("#otherAnswer").hide(); 
+						$("#campaigntemplateother1").val("");
+						$("#otherAnswer").hide(); 
 					}
 						
 					});
@@ -249,25 +250,26 @@
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Other
-					  <input type="radio" name="buyingtemplate" value="othercampaign"/>
+					  <input type="radio" name="buyingtemplate" value="Other"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<br/>
 					<div id="otherAnswercampaign" style="display:none;" class="group col-md-12">
-					<input  type="text" name="arepeoplebuyingcampaign" >
+					<input  type="text" name="arepeoplebuyingcampaign" id="arepeoplebuyingcampaign1" />
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label class=" left">Please specify</label>
 				</div>
 				<script>
-					$("input[type='radio']").change(function(){
+					$("input[name='buyingtemplate']").change(function(){
 							
-					if($(this).val()=="othercampaign")
+					if($(this).val()=="Other")
 					{
 						$("#otherAnswercampaign").show();
 					}
 					else
 					{
+						$("#arepeoplebuyingcampaign1").val("");
 						   $("#otherAnswercampaign").hide(); 
 					}
 						

@@ -2,7 +2,7 @@
 
 require 'helperclass.php';
 
-$submitted_acct_id=$_POST['accoutnno'];
+$submitted_acct_id=trim($_POST['accoutnno']);
 $refererUrl=$_SERVER['HTTP_REFERER'];
 $conn=getConnnObject();
 
