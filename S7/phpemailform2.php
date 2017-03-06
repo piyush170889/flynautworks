@@ -29,14 +29,14 @@
 	$alertofpurchase='';
 	if (isset($_GET['purchasealertowner'])) {
 		$ownerEmailSql="select OWNER_MAIL from user_dtls where ACCT_NUM='$accountnumber'";
-		$owneremailrow=getSingleRow($ownerEmailSql);
+		$owneremailrow=getSingleRow($ownerEmailSql, $refererUrl);
 		$owneremail=$owneremailrow['OWNER_MAIL'];
 		$alertofpurchase = $owneremail;
 	} 
 		
 	if (isset($_GET['purchasealertmanager'])) {
 		$manageremailSql="select MANAGER_EMAIL from user_dtls where ACCT_NUM='$accountnumber'";
-		$manageremailRow=getSingleRow($manageremailSql);
+		$manageremailRow=getSingleRow($manageremailSql, $refererUrl);
 		$manageremail=$manageremailRow['MANAGER_EMAIL'];
 		if (!empty($alertofpurchase)) {
 			$alertofpurchase=$alertofpurchase.",";

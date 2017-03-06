@@ -172,7 +172,7 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 			return $finalOrderId;
 		} 
 		
-		function getSingleRow($sql) {
+		function getSingleRow($sql, $refererUrl) {
 			$conn=getConnnObject();
 			$stmt = $conn->prepare($sql);
 			$stmt->execute();
