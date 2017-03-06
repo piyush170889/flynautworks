@@ -170,43 +170,43 @@
 				<h4>Campaign Template</h4>
 				 <div class="col-md-12 ">
 					<label class="control control--radio">Special Offer (Buy-Online)
-					  <input type="radio" name="campaigntemplate" checked />
+					  <input type="radio" name="campaigntemplate" checked value="specialofferbuyonline" />
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Download Coupon
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="downloadcoupon1"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Call-In Offer
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="callinoffer"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Kids Challenge
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="kidschallenge"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Parents Night Out
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="parentsnightout"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Summer Camp
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="summercamp"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Afterschool
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="afterschool"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Special Event
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="specialevent"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Adult Fitness
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="adultfitness"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Adult Challenge
-					  <input type="radio" name="campaigntemplate"/>
+					  <input type="radio" name="campaigntemplate" value="adultchallenge"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio" >Other
@@ -241,11 +241,11 @@
 				<h4>Are People Buying This Campaign Online? <span style="color:red;">*</span></h4>
 				<div class="col-md-12 ">
 					<label class="control control--radio">Special Offer (Buy-Online)
-					  <input type="radio" name="buyingtemplate" checked />
+					  <input type="radio" name="buyingtemplate" checked value="specialoffer"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Download Coupon
-					  <input type="radio" name="buyingtemplate"/>
+					  <input type="radio" name="buyingtemplate" value="downloadcoupon2"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Other
@@ -254,7 +254,7 @@
 					</label>
 					<br/>
 					<div id="otherAnswercampaign" style="display:none;" class="group col-md-12">
-					<input  type="text" name="campaigntemplateother" >
+					<input  type="text" name="arepeoplebuyingcampaign" >
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label class=" left">Please specify</label>

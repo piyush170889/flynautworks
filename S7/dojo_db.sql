@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `order_dtls`
+--
+
+DROP TABLE IF EXISTS `order_dtls`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order_dtls` (
+  `ORDER_DTLS_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ACCT_NUM` varchar(15) NOT NULL,
+  `ORDER_ID` varchar(100) NOT NULL,
+  `ALERT_OF_PURCHASE_EMAILS` varchar(1000) NOT NULL,
+  `CREATED_TS` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `MODIFIED_TS` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ORDER_DTLS_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_dtls`
+--
+
+LOCK TABLES `order_dtls` WRITE;
+/*!40000 ALTER TABLE `order_dtls` DISABLE KEYS */;
+INSERT INTO `order_dtls` VALUES (1,'DN2017701','','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:41:20','2017-03-06 13:41:20'),(2,'DN2017701','','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:42:05','2017-03-06 13:42:05'),(3,'DN2017701','PI22205552','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:43:36','2017-03-06 13:43:36'),(4,'DN2017701','PI53704151','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:46:25','2017-03-06 13:46:25'),(5,'DN2017701','PI85470460','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:47:24','2017-03-06 13:47:24'),(6,'DN2017701','PI92350463','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:47:51','2017-03-06 13:47:51'),(7,'DN2017701','PI17555319','piyush.jadhav@repleteinc.com,testmanage@repleteinc.com,test2@gmail.com','2017-03-06 13:49:29','2017-03-06 13:49:29');
+/*!40000 ALTER TABLE `order_dtls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_dtls`
 --
 
@@ -45,7 +73,7 @@ CREATE TABLE `user_dtls` (
   `CREATED_TS` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `MODIFIED_TS` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`USER_DTLS_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=703 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +82,7 @@ CREATE TABLE `user_dtls` (
 
 LOCK TABLES `user_dtls` WRITE;
 /*!40000 ALTER TABLE `user_dtls` DISABLE KEYS */;
-INSERT INTO `user_dtls` VALUES (1,NULL,'ownername','owneremail@example.com','1234567890','schoolnm','schoolweblink','programoffered','fblink','otherfblink','schoolmngr','manageremail','managernum','techmanager','techmanageremail','techmanagernum','leademail','leadnum','N','2017-03-02 16:29:23','2017-03-02 16:29:23'),(2,NULL,'ownername','owneremail@example.com','1234567890','schoolnm','schoolweblink','programoffered','fblink','otherfblink','schoolmngr','manageremail','managernum','techmanager','techmanageremail','techmanagernum','leademail','leadnum','N','2017-03-02 16:29:23','2017-03-02 16:29:23'),(3,NULL,'test','test@gmail.com','123548790','test','test','test','test','test','test','test@gmail.com','7894561230','test','test@gmail.com','123456987','test@gmail.com','123','N','2017-03-02 16:29:23','2017-03-02 16:29:23'),(4,NULL,'test','test@gmail.com','123548790','test','test','test','test','test','test','test@gmail.com','7894561230','test','test@gmail.com','123456987','test@gmail.com','123','N','2017-03-02 16:32:06','2017-03-02 16:32:06'),(5,NULL,'same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','N','2017-03-02 16:34:30','2017-03-02 16:34:30'),(6,NULL,'same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','N','2017-03-02 16:35:15','2017-03-02 16:35:15'),(7,NULL,'same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','N','2017-03-02 16:37:04','2017-03-02 16:37:04'),(8,'8','same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','Y','2017-03-02 16:39:41','2017-03-02 16:39:41'),(9,NULL,'same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','N','2017-03-02 16:42:02','2017-03-02 16:42:02'),(10,'10','same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','Y','2017-03-02 16:44:18','2017-03-02 16:44:18'),(11,'11','same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','Y','2017-03-02 17:07:39','2017-03-02 17:07:39'),(12,'12','same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','Y','2017-03-02 17:08:31','2017-03-02 17:08:31'),(13,'13','same','same@same.com','123','same','same','same','same','same','same','same@same.com','12354','same','same@gmail.com','78941','same@same.com','12361','Y','2017-03-02 17:15:58','2017-03-02 17:15:58'),(14,'14','Piyush','piyushjadhav65@gmail.com','9096409749','Test School','test@gmail.com','ajaknlkdalka','askjdbkjsd','sdvb sdk','shbcjas','sdjkj@ksbdkjds.com','7896541230','sefvsd','qwe@asd.com','7895641230','sdjknjskd@ksdks.com','1236547890','Y','2017-03-02 17:31:03','2017-03-02 17:31:03'),(15,'15','Piyush','piyushjadhav65@gmail.com','9096409749','Test School','test@gmail.com','ajaknlkdalka','askjdbkjsd','sdvb sdk','shbcjas','sdjkj@ksbdkjds.com','7896541230','sefvsd','qwe@asd.com','7895641230','sdjknjskd@ksdks.com','1236547890','Y','2017-03-02 17:32:28','2017-03-02 17:32:29'),(16,'16','Piyush','piyushjadhav65@gmail.com','9096409749','TestSchool','aksbka','asnalsln','alksnlaks','alsnlaks','asknakls','asa@jksndks.com','7894561230','sdnsd','sdknsl@bskjdkjsd.com','7896541230','sjkbjs@jksdnklsd.com','1234567890','Y','2017-03-02 17:40:12','2017-03-02 17:40:12'),(17,'17','Piyush','piyushjadhav65@gmail.com','9096409749','TestSchool','aksbka','asnalsln','alksnlaks','alsnlaks','asknakls','asa@jksndks.com','7894561230','sdnsd','sdknsl@bskjdkjsd.com','7896541230','sjkbjs@jksdnklsd.com','1234567890','Y','2017-03-02 17:49:21','2017-03-02 17:49:21');
+INSERT INTO `user_dtls` VALUES (701,'DN2017701','Piyush','piyush.jadhav@repleteinc.com','9096409749','Test','Testlink','TestProgram1,testprogram2','Fblink1','fblink1,fblink2','Piyush','testmanage@repleteinc.com','9096409749','Piyush','piyush.jadhav@repleteinc.com','9096409749','piyush.jadhav@repleteinc.com','9096409749','Y','2017-03-06 09:09:52','2017-03-06 13:30:14'),(702,'DN2017702','Piyush','piyush.jadhav@repleteinc.com','9096409749','Test','Testlink','TestProgram1,testprogram2','Fblink1','fblink1,fblink2','Piyush','piyush.jadhav@repleteinc.com','9096409749','Piyush','piyush.jadhav@repleteinc.com','9096409749','piyush.jadhav@repleteinc.com','9096409749','Y','2017-03-06 09:10:23','2017-03-06 09:10:23');
 /*!40000 ALTER TABLE `user_dtls` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-02 23:23:35
+-- Dump completed on 2017-03-06 19:34:43
