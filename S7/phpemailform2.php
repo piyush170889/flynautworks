@@ -1,6 +1,6 @@
 <?php
 	require 'sendmailform2.php';
-	$subject = "ENQUIRY";
+	$subject = "Campaign Order Form";
 	$clientname = $_GET['clientname'];
 	$accountnumber=$_GET['accountnumber'];
 	$contactpreference=$_GET['contactpreference'];
