@@ -119,6 +119,57 @@ input[type="number"] {
 			  }
 					});
 					
+			
+			
+				// Radio events	
+				 $('#radio3').on('change', function() {
+				// alert("clicked");
+				  if ("$this.val==2") 
+				  {
+				  
+				 
+				  var owneremail= $("input[name=owneremail]").val();
+				  var ownernumber= $("input[name=ownernumber]").val();
+			   
+			   // set manager 
+			   
+			      
+			      $("input[name=leademail]").val(owneremail);
+			      $("input[name=leadnumber]").val(ownernumber);
+
+			     } else {
+			  // unchecked section
+				 
+			      $("input[name=leademail]").val("");
+			      $("input[name=leadnumber]").val("");
+			  }
+					});
+					
+					
+				// Radio events	
+				 $('#radio4').on('change', function() {
+				// alert("clicked");
+				  if ("$this.val==2") 
+				  {
+				  
+				 
+				  var manageremail= $("input[name=manageremail]").val();
+				  var managernumber= $("input[name=managernumber]").val();
+			   
+			   // set manager 
+			   
+			      
+			      $("input[name=leademail]").val(manageremail);
+			      $("input[name=leadnumber]").val(managernumber);
+
+			     } else {
+			  // unchecked section
+				 
+			      $("input[name=leademail]").val("");
+			      $("input[name=leadnumber]").val("");
+			  }
+					});
+					
 					
 			
 		});
@@ -330,18 +381,19 @@ input[type="number"] {
 			<br>
 			<div class="row">
 			<div class="col-md-2 col-xs-12 col-sm-12" style="float:right;">
-			<div class="pure-radiobutton ownerradio">
-            <input id="radio1" name="radio" type="radio" class="radio" value="1">
-            <label for="radio1">Same as Owner</label>
-            </div>
-			</div>
-			
-			<div class="col-md-2 col-xs-12 col-sm-12" style="float:right;">
 			<div class="pure-radiobutton ownerradio ownerradio2">
             <input id="radio2" name="radio" type="radio" class="radio" value="2">
             <label for="radio2">Same as Manager</label>
             </div>
 			</div>
+			<div class="col-md-2 col-xs-12 col-sm-12" style="float:right;">
+			<div class="pure-radiobutton ownerradio">
+            <input id="radio3" name="radio" type="radio" class="radio" value="1">
+            <label for="radio3">Same as Owner</label>
+            </div>
+			</div>
+			
+			
 			</div>
 			<div class="group resp-height mag-top">
                 <input type="email" name="leademail" required="">
