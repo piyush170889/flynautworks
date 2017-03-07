@@ -164,6 +164,39 @@
 								});
 							  });
 					</script>
+					<script>
+						$(document).ready(function() {
+								$("#fileUpload2").on('change', function() {
+								  //Get count of selected files
+								  var countFiles = $(this)[0].files.length;
+								  var imgPath = $(this)[0].value;
+								  var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+								  var image_holder = $("#image-holder2");
+								  image_holder.empty();
+								  if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+									if (typeof(FileReader) != "undefined") {
+									  //loop for each file selected for uploaded.
+									  for (var i = 0; i < countFiles; i++) 
+									  {
+										var reader = new FileReader();
+										reader.onload = function(e) {
+										  $("<img />", {
+											"src": e.target.result,
+											"class": "thumb-image"
+										  }).appendTo(image_holder);
+										}
+										image_holder.show();
+										reader.readAsDataURL($(this)[0].files[i]);
+									  }
+									} else {
+									  alert("This browser does not support FileReader.");
+									}
+								  } else {
+									alert("Pls select only images");
+								  }
+								});
+							  });
+					</script>
 					
 		</head>
 		<body style="overflow-x: hidden;">
@@ -470,16 +503,16 @@
 					
 					
 					<div class="row" style="padding:0 15px;">
-					<div class="col-md-12" style="">
-					<label style="font-size:24px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Upload your logo :</label>
+					<div class="col-md-6" style="padding-left: 0;">
+					<h3 style="font-size:24px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Upload your logo :</h3>
 					</div>
-					<br/>
-					<br/>
+					<br>
+					<br>
 					<div class="col-md-12" style="padding:0;">
 					
 					<style type="text/css">.thumb-image{float:left;width:250px;position:relative;padding:5px;}</style>
-					<div id="wrapper" style="margin-top: 20px;">
-					<input id="fileUpload" style="background: #03A9F4;color: #fff;border: none;padding: 10px;font-size: 16px;" type="file" name="logo" required="">
+					<div id="wrapper" style="/*! margin-top: 20px; */">
+					<input id="fileUpload" style="background: #03A9F4;color: #fff;border: none;padding: 10px;font-size: 16px;" name="logo" required="" type="file">
 					<div id="image-holder"></div>
 					</div>
 					</div>
@@ -489,15 +522,16 @@
 					<div class="col-md-6 " style="">
 					<h3 class="" style="font-size:24px;border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;">Upload your images : </h3>
 					</div>
+					<div class="col-md-6 mag-top-35">
+					<p class="text-right">(Choose multiple images to upload.Max 10 images)</p>
 					
-					<br/>
-					<br/>
-					<br/>
-					<div class="col-md-6">
-					<p class="text-right">(Max 10 images)</p>
 					</div>
 					<div class="col-md-12">
-					<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics" >
+					<!--<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics" >-->
+					<div id="wrapper">
+					<input id="fileUpload2" style="background: #03A9F4;color: #fff;border: none;padding: 10px;font-size: 16px;" type="file" name="logo" required="" multiple="multiple">
+					<div id="image-holder2"></div>
+					</div>
 					</div>
 					</div>
 					<br/>
