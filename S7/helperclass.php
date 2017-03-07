@@ -105,14 +105,14 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		}
 		
 		function insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls) {
+		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,$companybio,$specialNotes) {
 			$acct_id_prefix="DN2017";
 			
 			$acct_id=0;
 			
 			$sqlInsert = "INSERT INTO user_dtls(OWNER_NAME,OWNER_MAIL,OWNER_NUM,SCHOOL_NM,SCHOOL_WEB_LINK,PROGRAM_OFFRD,
-			FB_LINK,OTHER_FB_LINK,SCHOOL_MNGR,MANAGER_EMAIL,MANAGER_NUM,TECH_MANAGER,
-			TECH_MANAGER_EMAIL,TECH_MANAGER_NUM,LEAD_EMAIL,LEAD_NUM,LOGO_URL,UPLOAD_IMG_URLS) VALUES ('$ownername', '$owneremail', '$ownernumber', '$schoolname', '$schoolweblink', '$programoffered','$facebooklink','$otherfblink','$schoolmanager','$manageremail','$managernumber','$techmanager','$techmanageremail','$techmanagernumber','$leademail','$leadnumber','$logo_url','$uploaded_images_urls')";
+			FB_LINK,OTHER_FB_LINK,SCHOOL_MNGR,MANAGER_EMAIL,MANAGER_NUM,TECH_MANAGER,TECH_MANAGER_EMAIL,TECH_MANAGER_NUM,LEAD_EMAIL,LEAD_NUM,LOGO_URL,
+			UPLOAD_IMG_URLS,COMPANY_BIO,SPECIAL_NOTES) VALUES ('$ownername', '$owneremail', '$ownernumber', '$schoolname', '$schoolweblink', '$programoffered','$facebooklink','$otherfblink','$schoolmanager','$manageremail','$managernumber','$techmanager','$techmanageremail','$techmanagernumber','$leademail','$leadnumber','$logo_url','$uploaded_images_urls','$companybio','$specialNotes')";
 			$conn = getConnnObject();
 			// use exec() because no results are returned
 			$conn->exec($sqlInsert);

@@ -17,6 +17,8 @@
 	$techmanager=$_POST['techmanager'];
 	$techmanageremail=$_POST['techmanageremail'];
 	$techmanagernumber=$_POST['techmanagernumber'];
+	$companybio=$_POST['companybio'];
+	$specialNotes=$_POST['specialnotes'];
 	$refererUrl=$_SERVER['HTTP_REFERER'];
 	$programoffered="";
 	$otherfblink="";
@@ -132,7 +134,8 @@
 		$uploaded_images_urls=upload($client_directory_path, "pics");
 		
 		$acct_num=insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls);					//Insert User details in db
+					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,
+					$companybio,$specialNotes);					//Insert User details in db
 		
 		$body=createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num);		// Create Email body to send
