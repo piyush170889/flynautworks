@@ -142,7 +142,7 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		
 		function getConnnObject() {
 			$servername = "localhost";
-			$password = "root";
+			$password = "";
 			$username = "root";
 			$dbname = "dojo_db";
 
