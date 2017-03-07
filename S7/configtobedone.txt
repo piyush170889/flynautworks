@@ -1,0 +1,6 @@
+helperclass.php:
+	db connections in getCOnnObject() method.
+	
+phpemail.php:
+	--	Uploads folder name
+	--	uplaod files input type name
