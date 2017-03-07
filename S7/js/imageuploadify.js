@@ -184,7 +184,7 @@
                 const files = this.files;
                 retrieveFiles(files);
             });
-            $(self).closest("form").on("submit", function(event) {
+           /* $(self).closest("form").on("submit", function(event) {
                 event.stopPropagation();
                 event.preventDefault(event);
                 const inputs = this.querySelectorAll("input, textarea, select, button");
@@ -215,7 +215,7 @@
                 xhr.open("POST", $(this).attr("action"), true);
                 xhr.send(formData);
                 return false;
-            });
+            });*/
             $(self).hide();
             dragbox.insertAfter(this);
         });

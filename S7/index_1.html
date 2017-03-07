@@ -479,7 +479,7 @@
 					
 					<style type="text/css">.thumb-image{float:left;width:250px;position:relative;padding:5px;}</style>
 					<div id="wrapper" style="margin-top: 20px;">
-					<input id="fileUpload" style="background: #03A9F4;color: #fff;border: none;padding: 10px;font-size: 16px;" type="file" name="logo">
+					<input id="fileUpload" style="background: #03A9F4;color: #fff;border: none;padding: 10px;font-size: 16px;" type="file" name="logo" required="">
 					<div id="image-holder"></div>
 					</div>
 					</div>
@@ -497,7 +497,7 @@
 					<p class="text-right">(Max 10 images)</p>
 					</div>
 					<div class="col-md-12">
-					<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics">
+					<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics" required="">
 					</div>
 					</div>
 					<br/>
@@ -505,10 +505,8 @@
 					<br/>
 					<div class="row" style="padding:0 15px;">
 					<div class="group resp-height">
-						<input name="facebooklink" required="" type="text">
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						<label>Special Notes:</label>
+						<h3 style="font-size:24px;/* width: 17em; */border-style: solid;border-width: 0 0.5em 0.4em 0;border-color: white white #03A9F4 white;"> Special notes</h3>
+						<textarea name="comment" rows="5" class="col-md-12 form-control textareafield" form="usrform">Enter text here...</textarea>
 					</div>
 					
 					</div>
