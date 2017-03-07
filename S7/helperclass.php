@@ -1,7 +1,7 @@
 <?php
 
 function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num) {
+		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes) {
 			$body = "<html>
 				<head>
 				<style>
@@ -97,7 +97,16 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 				<td class=\"labelvalue\">".$leadnumber."</td>
 
 				</tr>
-				
+				<tr>
+				<td class=\"label\">Company Bio</td>
+				<td class=\"labelvalue\">".$companybio."</td>
+
+				</tr>
+				<tr>
+				<td class=\"label\">Special Notes</td>
+				<td class=\"labelvalue\">".$specialNotes."</td>
+
+				</tr>
 				</table>
 				</body>
 				</html>";

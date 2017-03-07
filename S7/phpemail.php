@@ -90,7 +90,7 @@
 		$extension=array("jpeg","jpg","png","gif");
 		$newFileName="";
 		$uploaded_files="";
-		echo $name.": ".count($_FILES[$name]["tmp_name"])."<br/>";
+		
 		foreach($_FILES[$name]["tmp_name"] as $key=>$tmp_name)
 		{
 			$file_name=$_FILES[$name]["name"][$key];
@@ -138,13 +138,13 @@
 					$companybio,$specialNotes);					//Insert User details in db
 		
 		$body=createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num);		// Create Email body to send
+					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes);		// Create Email body to send
 	
 		sendEmail($subject, $body, $owneremail,$refererUrl,$acct_num);		//send email
 		
 	} catch(PDOException $e) {
-		echo "<br/>".$e;
+		//echo "<br/>".$e;
 		echo "<script type='text/javascript'>alert('Record could not be saved at the moment');</script>";
-		//echo "<script type='text/javascript'>window.location='$refererUrl';</script>";
+		echo "<script type='text/javascript'>window.location='$refererUrl';</script>";
 	}
 ?> 

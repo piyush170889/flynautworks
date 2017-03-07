@@ -22,7 +22,6 @@
 			showErrorAndRedirect($refererUrl);
 		} else {                        
 			sendThankYouEmail($toAddr, $refererUrl, $acct_num);
-			//echo "<script>window.location.href='http://repleteinc.com/'</script>";
 		}
 	}
 	
