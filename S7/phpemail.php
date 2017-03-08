@@ -19,6 +19,7 @@
 	$techmanagernumber=$_POST['techmanagernumber'];
 	$companybio=$_POST['companybio'];
 	$specialNotes=$_POST['specialnotes'];
+	$imagedata=$_POST['images'];
 	$refererUrl=$_SERVER['HTTP_REFERER'];
 	$programoffered="";
 	$otherfblink="";
@@ -96,9 +97,6 @@
 			$file_name=$_FILES[$name]["name"][$key];
 			$file_tmp=$_FILES[$name]["tmp_name"][$key];
 			
-			echo $name.": ".$file_tmp."<br/>";
-			
-			
 			$ext=pathinfo($file_name,PATHINFO_EXTENSION);
 			if(in_array($ext,$extension))
 			{
@@ -131,20 +129,64 @@
 		return $uploaded_files;
 
 	}
+	
+	function uploadBase64EncodedImages($client_directory_path,$imagedata) {
+		$uploaded_files="";
+		$extension=array("jpeg","jpg","png","gif");
+		$explodeSpecialChar="$";
+		$images_array=explode($explodeSpecialChar,$imagedata);
+		$no_of_images=count($images_array);
 		
+		foreach ($images_array as $image_no => $image) {
+			list($type, $data) = explode(';', $image);
+			list(, $data)      = explode(',', $data);
+			$data = base64_decode($data);
+			list(,$ext)=explode('/',$type);
+			if(in_array($ext,$extension))
+			{
+				$newFileName=$client_directory_path."image".$image_no.'.'.$ext;
+				if (!is_dir($client_directory_path)) {
+					mkdir($client_directory_path);
+				}
+								
+				if(!file_exists($newFileName))
+				{
+					file_put_contents($newFileName, $data);
+				}
+				else {
+					$newFileName=$client_directory_path."image".$image_no."_".time().'.'.$ext;
+					file_put_contents($newFileName, $data);
+				}				
+				
+				if (empty($uploaded_files)) {
+					$uploaded_files=$newFileName;
+				} else {
+					$uploaded_files=$uploaded_files.",".$newFileName;
+				}
+				
+			}else
+			{
+				//array_push($error,"Inavlid File");
+			}
+		}
+		
+		return $uploaded_files;
+			
+	}
+
 	try {
 		$logo_url=upload($client_directory_path, "logo");
 		
-		$uploaded_images_urls=upload($client_directory_path, "pics");
+		$uploaded_images_urls=uploadBase64EncodedImages($client_directory_path, $imagedata);
 		
-		/*$acct_num=insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
+		$acct_num=insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,
 					$companybio,$specialNotes);					//Insert User details in db
 		
 		$body=createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes);		// Create Email body to send
 	
-		sendEmail($subject, $body, $owneremail,$refererUrl,$acct_num);		//send email*/
+		sendEmail($subject, $body, $owneremail,$refererUrl,$acct_num);		//send email
 		
 	} catch(PDOException $e) {
 		//echo "<br/>".$e;
