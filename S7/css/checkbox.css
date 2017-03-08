@@ -44,14 +44,14 @@
 .pure-radiobutton input[type="radio"] + label:before {
   box-sizing: content-box;
   content: '';
-  color: #4f8196;
+  color: #333;
   position: absolute;
   top: 50%;
   left: 0;
   width: 14px;
   height: 14px;
   margin-top: -9px;
-  border: 2px solid #4f8196;
+  border: 2px solid #333;
   text-align: center;
   transition: all 0.4s ease;
 }
