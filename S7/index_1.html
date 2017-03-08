@@ -177,6 +177,7 @@
 							  });
 					</script>
 					<script>
+					
 						$(document).ready(function() {
 								$("#fileUpload2").on('change', function() {
 								  //Get count of selected files
@@ -209,7 +210,24 @@
 								});
 							  });
 					</script>
-					
+					<script>
+					$("form").submit(function(e) {
+
+    var ref = $(this).find("[required]");
+
+    $(ref).each(function(){
+        if ( $(this).val() == '' )
+        {
+            alert("Required field should not be blank.");
+
+            $(this).focus();
+
+            e.preventDefault();
+            return false;
+        }
+    });  return true;
+});
+					</script>
 		</head>
 		<body style="overflow-x: hidden;">
         <input type="hidden"  value="" id="images" name="images"/>
