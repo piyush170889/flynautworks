@@ -25,8 +25,7 @@
 	<h1 class="text-center" style="color:#333;font-weight:bold;">Welcome Aboard</h1>
 	<h3 class="text-center" style="color:#333;">Thanks for filling out the on-boarding information.</h3>
 	<center><a href="#" style="font-size:20px;color:#333">You can set-up a kick off all with Randy via this link</a></center>
-	<h4 class="text-center" style="color:#333;">Your Account Number : <br>
-<b>Notice</b>:  Undefined index: acctid in <b>C:\xampp\htdocs\S7\thankyou.php</b> on line <b>28</b><br>
+	<h4 class="text-center" style="color:#333;">Your Account Number : <?php echo $_GET['acctid']; ?><br>
 </h4>
 	</div>
 	</div>
