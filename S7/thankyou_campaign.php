@@ -17,14 +17,22 @@
 		<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 		
 	</head>
-	<body style="height:100%;width:100%;background:url(img/thankyoubg.jpg);background-position:top center;background-size:cover;background-repeat:no-repeat;">
-	<div class="container" style="margin-top:18%;">
+	<body style="height:100%;width:100%;/*background:url(img/thankyou_campaignbg.jpg);*/background-position:top center;background-size:cover;background-repeat:no-repeat;">
+	<div class="container" style="margin-top:8%;">
 	<div class="row">
-	<div class="co-md-12 hidden-xs hidden-sm" >
+	<div class="col-md-4">
+	<img src="img/campaignbg.png" style="
+    width: 300px;
+    float: left;">
+	</div>
+	<div class="co-md-8 hidden-xs hidden-sm" style="
+    margin-top: 10%;">
 	<h1 class="text-center" style="color:#333;font-weight:bold;">Welcome Aboard</h1>
 	<h3 class="text-center" style="color:#333;">Thanks for filling out the on-boarding information.</h3>
 	<center><a href="#" style="font-size:20px;color:#333">You can set-up a kick off all with Randy via this link</a></center>
-	<h4 class="text-center" style="color:#333;">Your Order Id : <?php echo $_GET['orderid']; ?></h4>
+	<h4 class="text-center" style="color:#333;">Your Order Id : <br>
+<b>Notice</b>:  Undefined index: orderid in <b>C:\xampp\htdocs\S7\thankyou_campaign.php</b> on line <b>30</b><br>
+</h4>
 	</div>
 	</div>
 	</div>
