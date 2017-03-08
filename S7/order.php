@@ -29,12 +29,224 @@
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!--formValidation.min.js-->
+	<script src="https://cdn.jsdelivr.net/jquery.formvalidation/0.6.1/js/formValidation.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/g/jquery.formvalidation@0.6.1(js/formValidation.min.js+js/framework/bootstrap.min.js)"></script>
+	<!--/formValidation.min.js-->
 	<script>
   $( function() {
     $( "#datepicker" ).datepicker();
 	$( "#datepicker1" ).datepicker();
   } );
   </script>
+  
+  <script>
+$(document).ready(function() {
+    $('#myForm')
+	.formValidation({
+        framework: 'bootstrap',
+		resetForm: 'true',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-info',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            accoutnno: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Account Number is required.'
+                    }
+                    
+            }
+			},
+            clientname: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Client Name is requied.'
+                    }
+                }
+            },
+            contactpreference: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Client Contact Preference is required.'
+                    }
+                }
+            },
+            schoolprogramname: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'School and Program Name is required.'
+                    }
+                }
+            },
+            namecampaign: {
+				row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Campaign Name is required.'
+                    }
+                    
+                }
+            },
+            whatoffer: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Offer is a required.'
+                    }
+                   
+                }
+            },
+           
+			regularprice: {
+				row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Price is required.'
+                    }
+                    
+                }
+            },
+
+			campaignavatar: {
+                row:'.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Campaign Avatar is required.'
+                    }
+                }
+            },
+        
+			newstudenttype: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'New Student Type is required.'
+                    }
+                }
+            },
+			marketradius: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Campaign Market Radius is required.'
+                    }
+                }
+            },
+			
+			buyingtemplate: {
+                row: '.col-md-12',
+                validators: {
+                    notEmpty: {
+                        message: 'Please Select One Option.'
+                    }
+                }
+            },
+
+			campaignstartdate: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Campaign Start Date is required.'
+                    }
+                }
+            },
+			campaignenddate: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Campaign End Date is required.'
+                    }
+                }
+            },
+			
+			paymentprocessor: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Payment Processor is required.'
+                    }
+                }
+            },
+			
+			campaignbudget: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Campaign Budget is required.'
+                    }
+                }
+            },
+			
+			domainname: {
+                row: '.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Domain Name is required.'
+                    }
+                }
+            },
+			
+
+			trackingphonenumber: {
+                row:'.col-md-6',
+                validators: {
+                    notEmpty: {
+                        message: 'Tracking Phone Number is required.'
+                    }
+                }
+            },
+
+			//purchasealertowner: {
+              //  row:'.col-md-2',
+                //validators: {
+                  //  notEmpty: {
+                    //    message: 'Please Select 1 Option'
+                    //}
+                //}
+            //},
+			callrecordings: {
+                row:'.col-md-12',
+                validators: {
+                    notEmpty: {
+                        message: 'Email of persons to receive phone recordings is required.'
+                    }
+                }
+            },
+			othercampaignnotes: {
+                row:'.col-md-12',
+                validators: {
+                    notEmpty: {
+                        message: 'Other Campaign Notes is required.'
+                    }
+                }
+            },
+    }
+	})
+	.on('err.field.fv', function(e, data) {
+            // $(e.target)  --> The field element
+            // data.fv      --> The FormValidation instance
+            // data.field   --> The field name
+            // data.element --> The field element
+
+            data.fv.disableSubmitButtons(false);
+        })
+        .on('success.field.fv', function(e, data) {
+            // e, data parameters are the same as in err.field.fv event handler
+            // Despite that the field is valid, by default, the submit button will be disabled if all the following conditions meet
+            // - The submit button is clicked
+            // - The form is invalid
+            data.fv.disableSubmitButtons(false);
+        });
+});
+</script>
+  
 	</head>
 	<body style="background:url(img/bg.jpg);overflow-x:hidden;">
 	<div class="container-fluid">
@@ -62,7 +274,7 @@
 	</div>
 		<div class=" col-lg-12" id="panel">
 			<div class="container">
-			<form method="get" action="phpemailform2.php" style="padding:0 15px;">
+			<form method="get" id="myForm" action="phpemailform2.php" style="padding:0 15px;">
 				
 				<br/>
 				<br/>
@@ -242,7 +454,7 @@
 				<h4>Are People Buying This Campaign Online? <span style="color:red;">*</span></h4>
 				<div class="col-md-12 ">
 					<label class="control control--radio">Special Offer (Buy-Online)
-					  <input type="radio" name="buyingtemplate" checked value="Special Offer (Buy-Online)"/>
+					  <input type="radio" name="buyingtemplate" value="Special Offer (Buy-Online)"/>
 					  <div class="control__indicator"></div>
 					</label>
 					<label class="control control--radio">Download Coupon
@@ -399,9 +611,10 @@
 				<br/>
 				</div>
 				
-				<div class="group ">
-				  <input type="submit" value="Submit" class="btn btn-primary btn-lg" style="float:right;border-radius:0;padding:10px 25px">
-				</div>
+				<button type="submit" class="btn btn-primary btn-lg submit-btn" style="float:right;border-radius:0;padding:10px 25px;width:100%;">Submit</button>
+				 <!--<button type="submit" name="submitButton" class="btn btn-primary btn-lg" style="float:right;border-radius:0;padding:10px 25px;width:100%;">Submit</button>
+				 <input type="submit" name="submitButton" value="Submit" class="btn btn-primary btn-lg" style="float:right;border-radius:0;padding:10px 25px">-->
+				
 				<br/>
 				<br/>
 				<br/>

@@ -89,8 +89,10 @@
 	}
 	.sameasowner
 	{
-		float: left;
-		margin-left: -15px;
+	float: left;
+    margin-left: -15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 	}
 	.ownerradio
 	{
@@ -131,4 +133,13 @@
 	{
 		margin-top:20px;
 	}
+	.h3style
+	{
+	width:100%;
+	font-size:24px;
+	border-style: solid;
+	border-width:0 5px 3px 0;
+	border-color: white white #03A9F4 white;
+	}
+	
 	}

@@ -15,7 +15,8 @@
 	<link href="css/checkbox.css" rel="stylesheet">
 	<link href="css/responsive_s7.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<style>
 		input[type="number"]::-webkit-outer-spin-button,
 		input[type="number"]::-webkit-inner-spin-button {
@@ -208,11 +209,11 @@
 $(document).ready(function() {
     $('#formID').formValidation({
         framework: 'bootstrap',
-        icon: {
+       /* icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-info',
             validating: 'glyphicon glyphicon-refresh'
-        },
+        },*/
         fields: {
             ownername: {
                 row: '.col-md-6',
@@ -285,55 +286,55 @@ $(document).ready(function() {
                 }
             },
         
-			schoolmanager: {
+			/*schoolmanager: {
                 row: '.col-md-4',
                 validators: {
                     notEmpty: {
                         message: 'School Manager Name required.'
                     }
                 }
-            },
-			manageremail: {
+            },*/
+			/*manageremail: {
                 row: '.col-md-4',
                 validators: {
                     notEmpty: {
                         message: 'School Manager contact Email required.'
                     }
                 }
-            },
-			managernumber: {
+            },*/
+			/*managernumber: {
                 row: '.col-md-4',
                 validators: {
                     notEmpty: {
                         message: 'School Manager contact Number required.'
                     }
                 }
-            },
+            },*/
 
-			techmanager: {
+			/*techmanager: {
                 row: '.col-md-4',
                 validators: {
                     notEmpty: {
                         message: 'Technical Information Manager Name required.'
                     }
                 }
-            },
-			techmanageremail: {
+            },*/
+			/*techmanageremail: {
                 row: '.col-md-4',
                 validators: {
                     notEmpty: {
                         message: 'Technical Information Manager Email required.'
                     }
                 }
-            },
-			techmanagernumber: {
+            },*/
+			/*techmanagernumber: {
                 row: '.col-md-4',
                 validators: {
                     notEmpty: {
                         message: 'Technical Information Manager Contact Number required.'
                     }
                 }
-            },
+            },*/
 			
 
 			'logo[]': {
@@ -362,7 +363,22 @@ $(document).ready(function() {
                 }
             },
     }
-	});
+	})
+	.on('err.field.fv', function(e, data) {
+            // $(e.target)  --> The field element
+            // data.fv      --> The FormValidation instance
+            // data.field   --> The field name
+            // data.element --> The field element
+
+            data.fv.disableSubmitButtons(false);
+        })
+        .on('success.field.fv', function(e, data) {
+            // e, data parameters are the same as in err.field.fv event handler
+            // Despite that the field is valid, by default, the submit button will be disabled if all the following conditions meet
+            // - The submit button is clicked
+            // - The form is invalid
+            data.fv.disableSubmitButtons(false);
+        });
 });
 </script>
 	<!--/formvalidation-->
@@ -438,7 +454,7 @@ $(document).ready(function() {
 		<div class="row">
 			<div class="col-md-12">
 				<h2 class="heading" style="
-			background: #03A9F4;
+			background: #A29090;
 			color: #fff;
 			padding: 20px;
 			font-weight: bold;
@@ -473,8 +489,14 @@ $(document).ready(function() {
 						<span class="bar"></span>
 						<label class="left">Owner's Name <span style="color:red;">*</span></label>
 					</div>
-					<div class="group col-md-6 col-sm-12 col-xs-12">
+					<!--<div class="group col-md-6 col-sm-12 col-xs-12">
 						<input type="email" name="owneremail">
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label class="left">Owner's Contact Email <span style="color:red;">*</span></label>
+					</div>-->
+					<div class="group col-md-6 col-sm-12 col-xs-12">
+						<input type="email" name="owneremail" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="left">Owner's Contact Email <span style="color:red;">*</span></label>
@@ -776,7 +798,8 @@ $(document).ready(function() {
 				<br>
 				<br>
 				<div class="group mag-top">
-					<input type="submit" value="Submit" onClick="uploadImage();" class="btn btn-primary btn-lg submit-btn">
+					<button type="submit" onClick="uploadImage();" class="btn btn-primary btn-lg submit-btn">Submit</button>
+					<!--<input type="submit" value="Submit" onClick="uploadImage();" class="btn btn-primary btn-lg submit-btn">-->
 				</div>
 				<br>
 				<br>
