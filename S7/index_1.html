@@ -35,8 +35,9 @@
 				-moz-appearance: textfield;
 			} 	
 			</style>
-			<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>-->
-			<script src="js/jquery-1.12.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+			<!--  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>  -->
+			
 			<script type="text/javascript" src="js/imageuploadify.js"></script>
 			<script>
 			function uploadImage() {
@@ -140,7 +141,7 @@
 						  $("input[name=techmanagernumber]").val("");
 					  }
 							});	
-							$('#draganddrop').imageuploadify();
+							$("#draganddrop").imageuploadify();
 				});
 					</script>
 					<script>
@@ -210,8 +211,9 @@
 								});
 							  });
 					</script>
-					<script>
+					<!--<script>
 					$("form").submit(function(e) {
+					alert("submit");
 
     var ref = $(this).find("[required]");
 
@@ -227,6 +229,43 @@
         }
     });  return true;
 });
+					</script>-->
+					<script>
+					
+					$(document).ready(function(){
+					function onSubmitForm() {
+					alert("submitted");
+					
+
+  if (!e.target.checkValidity()) {
+    console.log("I am Safari"); // Safari continues with form regardless of checkValidity being false
+    e.preventDefault(); // dismiss the default functionality
+
+    $('#formId :input:visible[required=""]').each(function () {
+      if (!this.validity.valid) {
+        $(this).focus();
+        $(this).attr("placeholder", this.validationMessage).addClass('placeholderError');
+        $(this).val(''); // clear value so it shows error message on Placeholder.
+        return false;
+      }
+    });
+    return; // its invalid, don't continue with submission
+  }
+
+  e.preventDefault(); // have to add it again as Chrome, Firefox will never see above
+};
+});
+
+// prevent form submission
+var form = document.getElementById("formID"); 
+form.noValidate = true;
+form.addEventListener("submit", function(event) { 
+        alert(" Form Id ");
+		if (!event.target.checkValidity()) {
+            event.preventDefault(); 
+            alert('Please, fill the form'); 
+        }
+    }, false);
 					</script>
 		</head>
 		<body style="overflow-x: hidden;">
@@ -247,9 +286,7 @@
 			padding: 20px;
 			font-weight: bold;
 			margin-bottom: 20px;
-			margin-top:0;
-			
-		">S7 Client Intake Form</h2>
+			margin-top:0;">S7 Client Intake Form</h2>
 
 		</div>
 		</div>
@@ -263,7 +300,7 @@
 			</div>
 			<div class=" col-lg-12" id="panel">
 			
-				<form method="post" action="phpemail.php" style="padding:0 15px;" enctype="multipart/form-data">
+				<form method="post" action="phpemail.php"  style="padding:0 15px;" id="formID" enctype="multipart/form-data">
 					<div class="col-md-12" style="">
 					<input type="hidden"  value="" id="images" name="images"/>
 					<label style="font-size:20px;width: 17em;border-style: solid;border-width:0 5px 3px 0;border-color: white white #03A9F4 white;">Owner &amp; School Information :</label>
@@ -281,20 +318,20 @@
 					</div>
 
 					<div class="group col-md-6 col-sm-12 col-xs-12">
-						<input type="email" name="owneremail" required="">
+						<input type="email" name="owneremail" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="left">Owner's Contact Email <span style="color:red;">*</span></label>
 					</div>
 
 					<div class="group col-md-6 col-sm-12 col-xs-12">
-						<input type="number" name="ownernumber" required="">
+						<input type="number" name="ownernumber" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="left">Owner's Phone <span style="color:red;">*</span></label>
 					</div>
 					<div class="group col-md-6 col-sm-12 col-xs-12">
-						<input type="text" name="schoolname" required="">
+						<input type="text" name="schoolname" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="left">School Name <span style="color:red;">*</span></label>
@@ -543,7 +580,7 @@
 					
 					<style type="text/css">.thumb-image{float:left;width:250px;position:relative;padding:5px;}</style>
 					<div id="wrapper" style="/*! margin-top: 20px; */">
-					<input id="fileUpload" style="color: #333;border: none;padding: 10px;font-size: 16px;" name="logo[]" required="" type="file">
+					<input id="fileUpload" style="color: #333;border: none;padding: 10px;font-size: 16px;" name="logo[]" required type="file">
 					<div id="image-holder"></div>
 					</div>
 					</div>
@@ -560,7 +597,7 @@
 					<div class="col-md-12">
 				<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics[]" >
 				  <!--	<div id="wrapper">
-					<input id="fileUpload2" style="color: #333;border: none;padding: 10px;font-size: 16px;" type="file" name="pics[]" required="" multiple="multiple">
+					<input id="fileUpload2" style="color: #333;border: none;padding: 10px;font-size: 16px;" type="file" name="pics[]" required multiple="multiple">
 					<div id="image-holder2"></div>
 					</div> -->
 					</div>
@@ -589,7 +626,7 @@
 					<br>
 					
 					<div class="group mag-top">
-					  <input type="submit" value="Submit"   onClick="uploadImage()" class="btn btn-primary btn-lg submit-btn">
+					  <input type="submit" value="Submit"   onClick="uploadImage();" class="btn btn-primary btn-lg submit-btn">
 					</div>
 					<br>
 					<br>

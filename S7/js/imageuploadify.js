@@ -142,6 +142,17 @@
             button.on("click", function onClick(event) {
                 event.stopPropagation();
                 event.preventDefault();
+				var i=0;
+				 $('.imageuploadify-images-list img').each(function() {
+					 i+=parseInt(1);
+	                 
+                    });
+					console.log(i);
+					// set max upload limit
+					if(i >= 10){
+						alert("Max Upload Limit Reached ");
+						return;
+					}
                 $(self).click();
             });
             dragbox.on("dragenter", function onDragenter(event) {
