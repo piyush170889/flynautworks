@@ -39,6 +39,18 @@
 			<script src="js/jquery-1.12.4.min.js"></script>
 			<script type="text/javascript" src="js/imageuploadify.js"></script>
 			<script>
+			function uploadImage() {
+ //   alert("Here");
+    $('.imageuploadify-images-list img').each(function() {
+	    var fileSpliter="$";
+		var previousImgs=$('#images').val();
+		var imagSrc=$(this).attr('src');
+      //  console.log($(this).attr('src'));
+		previousImgs+=fileSpliter+imagSrc;
+		$('#images').val(previousImgs);
+    });
+}
+
 				$( document ).ready(function() {
 				$('#addButon').on('click',function() {
 		   
@@ -200,6 +212,8 @@
 					
 		</head>
 		<body style="overflow-x: hidden;">
+        <input type="hidden"  value="" id="images" name="images"/>
+
 		<div class="container-fluid">
 		<div class="row">
 		<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
@@ -527,11 +541,11 @@
 					
 					</div>
 					<div class="col-md-12">
-					<!--<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics" >-->
-					<div id="wrapper">
+				<input id="draganddrop" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple name="pics[]" >
+				  <!--	<div id="wrapper">
 					<input id="fileUpload2" style="color: #333;border: none;padding: 10px;font-size: 16px;" type="file" name="pics[]" required="" multiple="multiple">
 					<div id="image-holder2"></div>
-					</div>
+					</div> -->
 					</div>
 					</div>
 					<br/>
@@ -558,7 +572,7 @@
 					<br>
 					
 					<div class="group mag-top">
-					  <input type="submit" value="Submit" class="btn btn-primary btn-lg submit-btn">
+					  <input type="submit" value="Submit"   onClick="uploadImage()" class="btn btn-primary btn-lg submit-btn">
 					</div>
 					<br>
 					<br>

@@ -66,7 +66,7 @@
                 }
             }
             const readingFile = (id, file) => {
-                const fReader = new FileReader();
+				const fReader = new FileReader();
                 const width = dragbox.width();
                 const boxesNb = Math.floor(width / 100);
                 const marginSize = Math.floor((width - (boxesNb * 100)) / (boxesNb + 1));
@@ -87,6 +87,9 @@
                         imagesList.append(container);
                         imagesList.find(".imageuploadify-container:nth-child(" + boxesNb + "n+4)").css("margin-left", marginSize + "px");
                         imagesList.find(".imageuploadify-container:nth-child(" + boxesNb + "n+3)").css("margin-right", marginSize + "px");
+
+						console.log("File Contents: "+ e.target.result);	
+						
                     };
                 } else if (file.type) {
                     let type = "<i class='fa fa-file'></i>";

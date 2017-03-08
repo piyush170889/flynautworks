@@ -95,6 +95,10 @@
 		{
 			$file_name=$_FILES[$name]["name"][$key];
 			$file_tmp=$_FILES[$name]["tmp_name"][$key];
+			
+			echo $name.": ".$file_tmp."<br/>";
+			
+			
 			$ext=pathinfo($file_name,PATHINFO_EXTENSION);
 			if(in_array($ext,$extension))
 			{
@@ -133,14 +137,14 @@
 		
 		$uploaded_images_urls=upload($client_directory_path, "pics");
 		
-		$acct_num=insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
+		/*$acct_num=insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,
 					$companybio,$specialNotes);					//Insert User details in db
 		
 		$body=createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes);		// Create Email body to send
 	
-		sendEmail($subject, $body, $owneremail,$refererUrl,$acct_num);		//send email
+		sendEmail($subject, $body, $owneremail,$refererUrl,$acct_num);		//send email*/
 		
 	} catch(PDOException $e) {
 		//echo "<br/>".$e;
