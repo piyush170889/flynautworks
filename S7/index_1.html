@@ -170,9 +170,12 @@
 				}
 			});
 		});
+		
+		$("#radio1").prop( "checked", false );
 	</script>
 	<script>
 		$(document).ready(function () {
+			
 			$("#fileUpload2").on('change', function () {
 				//Get count of selected files
 				var countFiles = $(this)[0].files.length;
@@ -442,6 +445,7 @@ $(document).ready(function() {
 </head>
 
 <body style="overflow-x: hidden;">
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
@@ -553,7 +557,7 @@ $(document).ready(function() {
 			</div>
 				
 				<div class="row">
-				<div class="group col-md-12 col-sm-12 col-xs-12">
+				<div class="group resp-height col-md-12 col-sm-12 col-xs-12">
 					<input type="text" name="facebooklink" required="">
 					<span class="highlight"></span>
 					<span class="bar"></span>
@@ -605,21 +609,24 @@ $(document).ready(function() {
 				</div>
 				<div class="row" style="padding:0 15px;">
 					<div class="col-md-8 resp-height3" style="">
-						<label style="font-size:20px;/* width: 17em; */border-style: solid;border-width:0 5px 3px 0;border-color: white white #03A9F4 white;">Technical Information Manager to Grant Access to Websites, Emails, Ads Manager and Social Media Pages :</label>
+						<label style="font-size:20px;/* width: 17em; */border-style: solid;border-width:0 5px 3px 0;border-color: white white #03A9F4 white;margin-right:10px;">Technical Information Manager to Grant Access to Websites, Emails, Ads Manager and Social Media Pages :</label>
 					</div>
-					<div class="col-md-2 col-xs-12 col-sm-12">
-						<div class="pure-radiobutton ownerradio">
-							<input id="radio1" name="radio" type="radio" class="radio" value="1">
-							<label for="radio1" style="color:#333;">Same as Owner</label>
+					<div class="col-md-2 col-xs-12 col-sm-12 radiodiv" style="">
+						<div class="">
+							<input id="radio1" class="radioposition" name="radiotest" type="radio">
+							<label for="test2" class="radiolabel" style="color:#333;">Same as Owner</label>
 						</div>
 					</div>
-					<div class="col-md-2 col-xs-12 col-sm-12">
-						<div class="pure-radiobutton ownerradio ownerradio2">
-							<input id="radio2" name="radio" type="radio" class="radio" value="2">
-							<label for="radio2" style="color:#333;">Same as Manager</label>
+					<div class="col-md-2 col-xs-12 col-sm-12" style="margin-top: 30px; margin-left: -30px;">
+						<div style="">
+							<input id="radio2" name="radiotest" class="radioposition" type="radio" style="display:block;z-index:9999;">
+							<label for="test1" class="radiolabel" style="padding-left: 15px;">Same as Manager</label>
 						</div>
 					</div>
+					
 				</div>
+				<br/>
+				<br/>
 				<br/>
 				<br/>
 				<div class="row">
@@ -779,12 +786,12 @@ $(document).ready(function() {
 				<br/>
 				<br/>
 				<div class="row" style="padding:0;">
-					<div class="group col-md-6 col-xs-12 col-sm-12 col-lg-6 resp-height">
-						<h3 style="width:60%;font-size:24px;border-style: solid;border-width:0 5px 3px 0;border-color: white white #03A9F4 white;">Company Bio (200-300 Words)</h3>
+					<div class="group col-md-6 col-xs-12 col-sm-12 col-lg-6 ">
+						<h3 class="h3style">Company Bio (200-300 Words)</h3>
 						<textarea name="companybio" rows="5" class="col-md-12 form-control textareafield"></textarea>
 					</div>
-					<div class="group col-md-6 col-xs-12 col-sm-12 col-lg-6 resp-height">
-						<h3 style="width:60%;font-size:24px;border-style: solid;border-width:0 5px 3px 0;border-color: white white #03A9F4 white;">
+					<div class="group col-md-6 col-xs-12 col-sm-12 col-lg-6 ">
+						<h3 class="h3style">
 						Special notes</h3>
 						<textarea name="specialnotes" rows="5" class="col-md-12 form-control textareafield"></textarea>
 					</div>

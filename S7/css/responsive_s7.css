@@ -91,7 +91,7 @@
 	{
 	float: left;
     margin-left: -15px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
 	}
 	.ownerradio
@@ -141,5 +141,20 @@
 	border-width:0 5px 3px 0;
 	border-color: white white #03A9F4 white;
 	}
-	
+	.radiolabel {
+    color: #333 !important;
+    float: right;
+    margin-left: 60px;
+    margin-top: 20px;
+	}
+	.radioposition {
+    margin-left: -80px !important;
+    float: left;
+    position: absolute;
+	}
+	.radiodiv {
+    padding: 0 30px 0 0;
+    margin-top: 0px;
+    margin-left: 0px;
+	}
 	}

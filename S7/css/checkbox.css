@@ -20,7 +20,7 @@
 .pure-checkbox input[type="radio"]:hover + label:before,
 .pure-radiobutton input[type="radio"]:hover + label:before {
   border-color: #4f8196;
-  background-color: #f2f2f2;
+  background-color: #FFFFFF;
 }
 .pure-checkbox input[type="checkbox"]:active + label:before,
 .pure-radiobutton input[type="checkbox"]:active + label:before,
