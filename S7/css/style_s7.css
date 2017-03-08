@@ -353,3 +353,17 @@
 {
 	margin-top:30px;
 }
+
+#registerForm .has-error .control-label,
+#registerForm .has-error .help-block,
+#registerForm .has-error .form-control-feedback {
+    color: #a94442;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#registerForm .has-success .control-label,
+#registerForm .has-success .help-block,
+#registerForm .has-success .form-control-feedback {
+    color: #0083c1;
+}
