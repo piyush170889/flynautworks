@@ -151,9 +151,9 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		
 		function getConnnObject() {
 			$servername = "localhost";
-			$password = "dojo@123";
-			$username = "flynautw_dojo";
-			$dbname = "flynautw_dojo_db";
+			$password = "";
+			$username = "root";
+			$dbname = "dojo_db";
 
 			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			// set the PDO error mode to exception
