@@ -8,14 +8,14 @@
 		$mail->SMTPSecure = "ssl"; // does tls works with port 25
 		$mail->Host = 'smtp.gmail.com'; // is this the correct 
 		$mail->Port = 465;
-		$mail->Username = "dojoworks.flynaut@gmail.com";
-		$mail->Password = "dojomarketing@1";
-		$mail->SetFrom("dojoworks.flynaut@gmail.com");
+		$mail->Username = "piyushpradhan007@gmail.com";
+		$mail->Password = "deadfishalive@1990";
+		$mail->SetFrom("piyushpradhan007@gmail.com");
 		$mail->Subject = $subject;
 		$mail->Body = $body;
 		$mail->IsHTML(true);
-		$mail->AddAddress('dojoworks.flynaut@gmail.com');
-		$mail->AddAddress('dojodigest@gmail.com');
+		$mail->AddAddress('piyushpradhan@hotmail.com');
+		//$mail->AddAddress('dojodigest@gmail.com');
 		
 		if(!$mail->Send()) {
 			//$mail->ErrorInfo;
@@ -33,9 +33,9 @@
 		$mail->SMTPSecure = "ssl"; //tls
 		$mail->Host = 'smtp.gmail.com'; // smtp mail SMTP details
 		$mail->Port = 465;
-		$mail->Username = "dojoworks.flynaut@gmail.com";
-		$mail->Password = "dojomarketing@1";
-		$mail->SetFrom("dojoworks.flynaut@gmail.com");
+		$mail->Username = "piyushpradhan007@gmail.com";
+		$mail->Password = "deadfishalive@1990";
+		$mail->SetFrom("piyushpradhan007@gmail.com");
 		$mail->Subject = 'Thank you for contacting DOJO Marketing';
 		$mail->Body    = '<html lang="en">
 <head>
