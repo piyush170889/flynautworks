@@ -24,6 +24,7 @@
 	$trackingphonenumber=$_GET['trackingphonenumber'];
 	$callrecordings=$_GET['callrecordings'];
 	$othercampaignnotes=$_GET['othercampaignnotes'];
+	$shoppingcart=$_GET['shoppingcart'];
 	$refererUrl=$_SERVER['HTTP_REFERER'];
 	
 	//Set alert of purchases
@@ -165,6 +166,10 @@
 	<tr>
 	<td class=\"label\">Other Campaign Notes</td>
 	<td class=\"labelvalue\">".$othercampaignnotes."</td>
+	</tr>
+	<tr>
+	<td class=\"label\">Shopping Cart Link</td>
+	<td class=\"labelvalue\">".$shoppingcart."</td>
 	</tr>
 	</table>
 	</body>

@@ -4,10 +4,10 @@
 
 	<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
-
+		<meta name="description" content="Campaign Order Form">
+		<meta name="keywords" content="Campaign,Order,Form">
+		<meta name="author" content="Dojomarketing">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Campaign Order Form - Done With Client</title>
 		 <!-- Bootstrap Core CSS -->
 		 <link rel="stylesheet" href="css/jqueryui.css">
@@ -607,6 +607,12 @@ $(document).ready(function() {
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label  class="left">Other Campaign Notes</label>
+				</div>
+				<div class="group col-md-12">
+					<input type="text" name="shoppingcart" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label  class="left">Shopping Cart Link</label>
 				</div>
 				<br/>
 				</div>

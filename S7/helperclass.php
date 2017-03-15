@@ -1,7 +1,7 @@
 <?php
 
 function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes) {
+		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes,$city,$state,$zipcode,$streetaddress) {
 			$body = "<html>
 				<head>
 				<style>
@@ -35,6 +35,26 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 				<tr>
 				<td class=\"label\">School Name</td>
 				<td class=\"labelvalue\">".$schoolname."</td>
+				
+				</tr>
+				<tr>
+				<td class=\"label\">City</td>
+				<td class=\"labelvalue\">".$city."</td>
+				
+				</tr>
+				<tr>
+				<td class=\"label\">State</td>
+				<td class=\"labelvalue\">".$state."</td>
+				
+				</tr>
+				<tr>
+				<td class=\"label\">Zipcode</td>
+				<td class=\"labelvalue\">".$zipcode."</td>
+				
+				</tr>
+				<tr>
+				<td class=\"label\">Street Address</td>
+				<td class=\"labelvalue\">".$streetaddress."</td>
 				
 				</tr>
 				<tr>
@@ -114,14 +134,14 @@ function createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$school
 		}
 		
 		function insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,$companybio,$specialNotes) {
+		$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,$companybio,$specialNotes,$city,$state,$zipcode,$streetaddress) {
 			$acct_id_prefix="DN2017";
 			
 			$acct_id=0;
 			
 			$sqlInsert = "INSERT INTO user_dtls(OWNER_NAME,OWNER_MAIL,OWNER_NUM,SCHOOL_NM,SCHOOL_WEB_LINK,PROGRAM_OFFRD,
 			FB_LINK,OTHER_FB_LINK,SCHOOL_MNGR,MANAGER_EMAIL,MANAGER_NUM,TECH_MANAGER,TECH_MANAGER_EMAIL,TECH_MANAGER_NUM,LEAD_EMAIL,LEAD_NUM,LOGO_URL,
-			UPLOAD_IMG_URLS,COMPANY_BIO,SPECIAL_NOTES) VALUES ('$ownername', '$owneremail', '$ownernumber', '$schoolname', '$schoolweblink', '$programoffered','$facebooklink','$otherfblink','$schoolmanager','$manageremail','$managernumber','$techmanager','$techmanageremail','$techmanagernumber','$leademail','$leadnumber','$logo_url','$uploaded_images_urls','$companybio','$specialNotes')";
+			UPLOAD_IMG_URLS,COMPANY_BIO,SPECIAL_NOTES,CITY,STATE,ZIPCODE,STREET_ADDRESS) VALUES ('$ownername', '$owneremail', '$ownernumber', '$schoolname', '$schoolweblink', '$programoffered','$facebooklink','$otherfblink','$schoolmanager','$manageremail','$managernumber','$techmanager','$techmanageremail','$techmanagernumber','$leademail','$leadnumber','$logo_url','$uploaded_images_urls','$companybio','$specialNotes','$city','$state','$zipcode','$streetaddress')";
 			$conn = getConnnObject();
 			// use exec() because no results are returned
 			$conn->exec($sqlInsert);

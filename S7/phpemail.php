@@ -7,6 +7,10 @@
 	$owneremail = $_POST['owneremail'];
 	$ownernumber=$_POST['ownernumber'];
 	$schoolname=$_POST['schoolname'];
+	$city=$_POST['city'];
+	$state=$_POST['state'];
+	$zipcode=$_POST['zipcode'];
+	$streetaddress=$_POST['streetaddress'];
 	$schoolweblink=$_POST['schoolweblink'];
 	$programofferedasarray=$_POST['programoffered'];
 	$facebooklink=$_POST['facebooklink'];
@@ -181,10 +185,10 @@
 		
 		$acct_num=insertUserDetails($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
 					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$logo_url,$uploaded_images_urls,
-					$companybio,$specialNotes);					//Insert User details in db
+					$companybio,$specialNotes,$city,$state,$zipcode,$streetaddress);					//Insert User details in db
 		
 		$body=createEmailBody($ownername,$owneremail,$ownernumber,$schoolname,$schoolweblink,$programoffered,$facebooklink,$otherfblink,$schoolmanager,
-					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes);		// Create Email body to send
+					$manageremail,$managernumber,$techmanager,$techmanageremail,$techmanagernumber,$leademail,$leadnumber,$acct_num,$companybio,$specialNotes,$city,$state,$zipcode,$streetaddress);		// Create Email body to send
 	
 		sendEmail($subject, $body, $owneremail,$refererUrl,$acct_num);		//send email
 		

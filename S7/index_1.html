@@ -349,6 +349,42 @@ $(document).ready(function() {
                 }
             },
 
+			city: {
+                row:'.col-md-4',
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your city.'
+                    }
+                }
+            },
+			
+			state: {
+                row:'.col-md-4',
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your state.'
+                    }
+                }
+            },
+			
+			zipcode: {
+                row:'.col-md-4',
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your zipcode.'
+                    }
+                }
+            },
+			
+			streetaddress: {
+                row:'.col-md-12',
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your street address.'
+                    }
+                }
+            },
+			
 			companybio: {
                 row:'.col-md-6',
                 validators: {
@@ -357,6 +393,7 @@ $(document).ready(function() {
                     }
                 }
             },
+			
 			specialnotes: {
                 row:'.col-md-6',
                 validators: {
@@ -516,6 +553,30 @@ $(document).ready(function() {
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="left">School Name <span style="color:red;">*</span></label>
+					</div>
+					<div class="group col-md-4 col-sm-12 col-xs-12">
+						<input type="text" name="city" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label class="left">City<span style="color:red;">*</span></label>
+					</div>
+					<div class="group col-md-4 col-sm-12 col-xs-12">
+						<input type="text" name="state" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label class="left">State<span style="color:red;">*</span></label>
+					</div>
+					<div class="group col-md-4 col-sm-12 col-xs-12">
+						<input type="text" name="zipcode" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label class="left">Zipcode<span style="color:red;">*</span></label>
+					</div>
+					<div class="group col-md-12 col-sm-12 col-xs-12">
+						<input type="text" name="streetaddress" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label class="left">Street Address<span style="color:red;">*</span></label>
 					</div>
 				</div>
 				<div class="row">
